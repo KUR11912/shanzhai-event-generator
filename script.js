@@ -43,6 +43,12 @@ const packageContent = {
   },
 };
 
+const eventDialogueCopy = {
+  minesweeper: "Reveal the sealed tiles and locate the hidden crystal traps.",
+  tetris: "Arrange the falling crystal blocks and complete each energy line.",
+  pacman: "Explore the enchanted maze, collect the energy shards, and avoid the guardians.",
+};
+
 const mechanicOrder = Object.keys(mechanics);
 const storageKey = "shanzhai-event-generator:factory-state";
 
@@ -53,6 +59,8 @@ const state = {
   layout: saved?.layout || 0,
   step: saved?.step || 1,
   run: null,
+  uiMode: "core",
+  eventReady: false,
   packagingHidden: false,
 };
 
@@ -61,6 +69,8 @@ let gameLoopTimer;
 let gameClockTimer;
 let productionTimer;
 let isProducing = false;
+let modeConversionTimer;
+let isConvertingMode = false;
 const $ = (selector) => document.querySelector(selector);
 const elements = {
   templateStep: $("#step-template"), assetsStep: $("#step-assets"), runStep: $("#step-run"),
@@ -69,8 +79,9 @@ const elements = {
   revealMechanic: $("#reveal-mechanic"), anotherSkin: $("#another-skin"),
   selectedTemplateName: $("#selected-template-name"), assetGrid: $("#asset-grid"), formulaPreview: $("#formula-preview"), formulaNumber: $("#formula-number"),
   coreMechanicSummary: $("#core-mechanic-summary"), addedElementsSummary: $("#added-elements-summary"),
-  gameFrame: $("#game-frame"), gameStage: $("#game-stage"), eventMark: $("#event-mark"), eventTitle: $("#event-title"),
-  packagingPanel: $("#packaging-panel"),
+  gameFrame: $("#game-frame"), gameStage: $("#game-stage"), eventShellBackground: $("#event-shell-background"), eventMark: $("#event-mark"), eventTitle: $("#event-title"),
+  eventDialogue: $("#event-dialogue"), packagingPanel: $("#packaging-panel"),
+  modeConversion: $("#mode-conversion"), modeConversionStatus: $("#mode-conversion-status"), modeConversionBar: $("#mode-conversion-bar"),
   templateFeedback: $("#template-feedback"), productionProcess: $("#production-process"), productionStatus: $("#production-status"), productionBar: $("#production-bar"),
   toast: $("#toast"),
 };
@@ -132,6 +143,15 @@ function formulaCode() {
   return `FORMULA NO. SZ-${String(code).padStart(3, "0")}`;
 }
 
+function eventSpritePath(mechanic, spriteName) {
+  return window.EVENT_UI_ASSETS?.[mechanic]?.sprites?.[spriteName] || "";
+}
+
+function eventSpriteMarkup(mechanic, spriteName, className = "") {
+  const path = eventSpritePath(mechanic, spriteName);
+  return path ? `<img class="event-sprite ${className}" src="${path}" alt="" aria-hidden="true" />` : "";
+}
+
 function showToast(message) {
   clearTimeout(toastTimer);
   elements.toast.textContent = message;
@@ -175,6 +195,7 @@ function syncBuilder() {
 }
 
 function showStep(step, pushHistory = true) {
+  if (step !== 3 && isConvertingMode) cancelModeConversion();
   if (step === 2 && !state.mechanic) step = 1;
   if (step === 3 && (!state.mechanic || selectedAssetEntries().length === 0)) step = state.mechanic ? 2 : 1;
   state.step = step;
@@ -183,7 +204,10 @@ function showStep(step, pushHistory = true) {
   elements.runStep.hidden = step !== 3;
   document.body.classList.toggle("is-running", step === 3);
   if (step === 3) {
+    const needsInitialRender = !state.run || !elements.gameStage.firstElementChild;
     if (!state.run) state.run = createRunState();
+    if (needsInitialRender) renderCore();
+    renderPackaging();
     renderEvent();
     startGameLoop();
   } else {
@@ -204,6 +228,7 @@ function createRunState() {
   return {
     core: coreStateBuilders[state.mechanic](),
     progress: 0,
+    elapsedSeconds: 0,
     packageRemaining: assetValue("monetizationLayer") === "countdownOffer" ? 900 : null,
   };
 }
@@ -213,25 +238,55 @@ function currentEventTitle() {
   return story?.titles[state.mechanic] || mechanics[state.mechanic].title;
 }
 
+function renderEventShell() {
+  const eventMode = state.uiMode === "event";
+  if (!eventMode || !state.run) {
+    elements.eventDialogue.textContent = "";
+    elements.eventDialogue.setAttribute("aria-hidden", "true");
+    return;
+  }
+  const character = packageContent.characterPackage[assetValue("characterPackage")];
+  elements.eventDialogue.textContent = character ? `${character.name}: ${eventDialogueCopy[state.mechanic]}` : eventDialogueCopy[state.mechanic];
+  elements.eventDialogue.setAttribute("aria-hidden", "false");
+}
+
 function renderEvent() {
   const data = mechanics[state.mechanic];
-  const packaged = !state.packagingHidden;
+  const packaged = state.uiMode === "event";
+  const packagingEntries = selectedAssetEntries();
+  const hasPackaging = packagingEntries.length > 0;
+  state.packagingHidden = false;
   elements.gameFrame.dataset.mechanic = state.mechanic;
   elements.gameFrame.dataset.layout = String(state.layout);
-  elements.gameFrame.dataset.theme = packaged ? assetValue("visualSkin", "default") : "default";
-  elements.gameFrame.dataset.story = packaged ? assetValue("eventStory", "none") : "none";
-  elements.gameFrame.classList.toggle("has-packaging", packaged && selectedAssetEntries().length > 0);
-  elements.gameFrame.classList.toggle("is-unpackaged", !packaged);
+  elements.gameFrame.dataset.mode = packaged ? "event" : "core";
+  elements.gameFrame.dataset.theme = hasPackaging ? assetValue("visualSkin", "default") : "default";
+  elements.gameFrame.dataset.story = hasPackaging ? assetValue("eventStory", "none") : "none";
+  elements.gameFrame.classList.toggle("has-packaging", hasPackaging);
+  elements.gameFrame.classList.toggle("is-unpackaged", !hasPackaging);
+  elements.gameFrame.classList.toggle("is-event-mode", packaged);
+  elements.gameFrame.classList.toggle("is-core-mode", !packaged);
+  const eventBackground = state.mechanic === "minesweeper"
+    ? window.EVENT_UI_ASSETS?.common?.background
+    : window.EVENT_UI_ASSETS?.shell?.path;
+  if (eventBackground && elements.eventShellBackground.getAttribute("src") !== eventBackground) {
+    elements.eventShellBackground.setAttribute("src", eventBackground);
+  }
   elements.eventMark.textContent = data.mark;
-  elements.eventTitle.textContent = packaged ? currentEventTitle() : `${data.name} / CORE BUILD`;
+  elements.eventTitle.textContent = hasPackaging ? currentEventTitle() : `${data.name} / CORE BUILD`;
   elements.formulaNumber.textContent = formulaCode();
   elements.coreMechanicSummary.textContent = data.coreLoop;
-  elements.addedElementsSummary.textContent = packaged ? selectedAssetEntries().map((entry) => `${entry.group}: ${entry.label}`).join(" · ") : "Packaging removed. Core mechanic unchanged.";
-  elements.packagingPanel.hidden = !packaged;
-  elements.revealMechanic.textContent = packaged ? "Reveal the Original Mechanic" : "Restore the Packaging";
-  renderCore();
-  if (packaged) renderPackaging();
-  else elements.packagingPanel.innerHTML = "";
+  elements.addedElementsSummary.textContent = hasPackaging ? packagingEntries.map((entry) => `${entry.group}: ${entry.label}`).join(" · ") : "No packaging modules selected.";
+  elements.packagingPanel.classList.toggle("is-concealed", !hasPackaging);
+  elements.packagingPanel.setAttribute("aria-hidden", String(!hasPackaging));
+  elements.revealMechanic.textContent = packaged ? "Reveal the Original Mechanic" : state.eventReady ? "Restore Event Packaging" : "Convert to Event Version";
+  elements.revealMechanic.classList.toggle("button-primary", !packaged);
+  elements.revealMechanic.classList.toggle("button-secondary", packaged);
+  elements.revealMechanic.disabled = isConvertingMode;
+  elements.backToBuilder.disabled = isConvertingMode;
+  elements.anotherSkin.disabled = isConvertingMode;
+  elements.restartGame.disabled = isConvertingMode;
+  renderPackaging();
+  renderEventShell();
 }
 
 const mineSizes = { small: 7, medium: 9, large: 12 };
@@ -350,14 +405,24 @@ function minesweeperMarkup() {
     if (nearby) classes.push(`mine-count-${nearby}`);
     const label = flagged ? "Flagged tile" : triggered ? "Mine" : revealed ? `${nearby} nearby mines` : "Covered tile";
     const content = flagged ? "⚑" : triggered ? "✹" : nearby || "";
+    const spriteName = flagged ? "flag" : triggered ? "mine" : revealed ? (nearby > 0 && nearby <= 4 ? `number${nearby}` : "cellOpen") : "cellClosed";
+    classes.push(`event-mine-${spriteName}`);
     return `<button class="${classes.join(" ")}" type="button" data-action="mine-reveal" data-index="${index}" aria-label="${label}" ${revealed || triggered || run.phase !== "playing" ? "disabled" : ""}>${content}</button>`;
   }).join("");
   const modeValue = run.timeRemaining !== null ? `<span>TIME ${run.timeRemaining}</span>` : run.lives !== null ? `<span>LIVES ${run.lives}</span>` : "";
   const abilityValue = assetValue("specialTile") === "safetyShield" ? (run.shield ? "SHIELD READY" : "SHIELD USED") : scoreMultiplier === 2 ? "SCORE ×2" : assetValue("specialTile") === "chainReveal" ? (run.chainUsed ? "CHAIN USED" : "CHAIN READY") : "CLASSIC RULES";
+  const board = `<div class="mine-board" style="--board-size:${run.size}" aria-label="Minesweeper board">${tiles}</div>`;
+  const boardMarkup = `<div class="game-board-shell mine-board-shell">${board}</div>`;
+  const outcome = run.phase === "won"
+    ? eventSpriteMarkup("minesweeper", "victory", "event-mine-outcome event-mine-victory")
+    : run.phase === "lost"
+      ? `${eventSpriteMarkup("minesweeper", "explosion", "event-mine-impact")}${eventSpriteMarkup("minesweeper", "failure", "event-mine-outcome event-mine-failure")}`
+      : "";
   return `<div class="minesweeper-game">
     <div class="game-hud"><span>MINES ${remaining}</span><span>SCORE ${score}</span>${modeValue}<span>${abilityValue}</span><span>${run.phase.toUpperCase()}</span></div>
-    <div class="mine-board" style="--board-size:${run.size}" aria-label="Minesweeper board">${tiles}</div>
+    ${boardMarkup}
     <p class="game-status">${run.status}</p>
+    ${outcome}
   </div>`;
 }
 
@@ -446,6 +511,7 @@ function lockTetrisPiece(run) {
   while (remainingRows.length < 20) remainingRows.unshift(Array(10).fill(0));
   run.board = remainingRows;
   if (cleared) {
+    run.lastClearAt = Date.now();
     const rewards = [0, 100, 300, 500, 800];
     run.lines += cleared;
     run.combo += 1;
@@ -559,9 +625,12 @@ function tetrisMarkup() {
   const featureInfo = assetValue("extraFeature") === "holdBlock" ? `<span>HOLD ${run.holdName || "—"}</span>` : assetValue("extraFeature") === "nextPreview" ? `<span>NEXT ${run.nextName}</span>` : assetValue("extraFeature") === "comboBonus" ? `<span>COMBO ×${run.combo}</span>` : "";
   const specialInfo = run.current?.special ? `<span class="special-block-label">${run.current.special.replace(/([A-Z])/g, " $1").toUpperCase()}</span>` : "";
   const holdButton = assetValue("extraFeature") === "holdBlock" ? `<button class="core-button" data-action="tetris-hold" ${controlsDisabled || (!run.canHold ? "disabled" : "")}>Hold</button>` : "";
+  const clearEffect = run.lastClearAt && Date.now() - run.lastClearAt < 550 ? eventSpriteMarkup("tetris", "lineClear", "event-line-clear") : "";
+  const boardMarkup = `<div class="game-board-shell tetris-board-shell">${eventSpriteMarkup("tetris", "boardFrame", "event-board-frame")}${eventSpriteMarkup("tetris", "grid", "event-board-grid")}<div class="tetris-board" aria-label="Tetris board">${cells}</div>${clearEffect}</div>`;
+  const infoMarkup = `<aside class="tetris-info"><strong>${run.current?.name || "—"}</strong><span>CURRENT BLOCK</span>${specialInfo}${featureInfo}<p class="game-status">${run.status}</p></aside>`;
   return `<div class="tetris-game">
     <div class="game-hud"><span>SCORE ${run.score}</span><span>LINES ${run.lines}</span>${timedHud}<span>${run.phase.toUpperCase()}</span></div>
-    <div class="tetris-playfield"><div class="tetris-board" aria-label="Tetris board">${cells}</div><aside class="tetris-info"><strong>${run.current?.name || "—"}</strong><span>CURRENT BLOCK</span>${specialInfo}${featureInfo}<p class="game-status">${run.status}</p></aside></div>
+    <div class="tetris-playfield">${boardMarkup}${infoMarkup}</div>
     <div class="tetris-controls" aria-label="Tetris controls"><button class="core-button" data-action="tetris-left" aria-label="Move block left" ${controlsDisabled}>←</button><button class="core-button" data-action="tetris-rotate" aria-label="Rotate block" ${controlsDisabled}>↻</button><button class="core-button" data-action="tetris-right" aria-label="Move block right" ${controlsDisabled}>→</button><button class="core-button" data-action="tetris-down" aria-label="Soft drop" ${controlsDisabled}>↓</button><button class="core-button" data-action="tetris-drop" ${controlsDisabled}>Drop</button>${holdButton}</div>
   </div>`;
 }
@@ -721,18 +790,43 @@ function moveMazeEnemy() {
   renderPackaging();
 }
 
+function mazeWallVisual(run, index) {
+  const x = index % run.width;
+  const y = Math.floor(index / run.width);
+  const wallAt = (nextX, nextY) => nextX >= 0 && nextX < run.width && nextY >= 0 && nextY < run.height && run.walls.has(nextY * run.width + nextX);
+  const connections = [wallAt(x, y - 1), wallAt(x + 1, y), wallAt(x, y + 1), wallAt(x - 1, y)];
+  const count = connections.filter(Boolean).length;
+  if (count >= 4) return { sprite: "wallCross", rotation: 0 };
+  if (count === 3) return { sprite: "wallT", rotation: connections[0] && connections[1] && connections[2] ? 90 : connections[1] && connections[2] && connections[3] ? 180 : connections[2] && connections[3] && connections[0] ? 270 : 0 };
+  if (count === 2 && connections[1] && connections[3]) return { sprite: "wallHorizontal", rotation: 0 };
+  if (count === 2 && connections[0] && connections[2]) return { sprite: "wallVertical", rotation: 0 };
+  if (count === 2) {
+    const rotation = connections[0] && connections[1] ? 0 : connections[1] && connections[2] ? 90 : connections[2] && connections[3] ? 180 : 270;
+    return { sprite: "wallCorner", rotation };
+  }
+  return { sprite: connections[0] || connections[2] ? "wallVertical" : "wallHorizontal", rotation: 0 };
+}
+
 function pacmanMarkup() {
   const run = state.run.core;
   const controlsDisabled = run.phase === "playing" ? "" : "disabled";
   const cells = Array.from({ length: run.width * run.height }, (_, index) => {
-    const contents = [run.dots.has(index) ? '<i class="maze-dot"></i>' : "", run.specialPosition === index ? `<i class="maze-special ${run.specialItem}" aria-label="Special item"></i>` : "", run.player === index ? `<i class="maze-player${run.powerTicks > 0 ? " is-powered" : ""}${run.shieldActive ? " has-shield" : ""}" data-index="${index}"></i>` : "", run.enemy === index ? `<i class="maze-enemy" data-index="${index}"></i>` : ""].join("");
-    return `<span class="maze-cell${run.walls.has(index) ? " is-wall" : ""}">${contents}</span>`;
+    const isWall = run.walls.has(index);
+    const wallVisual = isWall ? mazeWallVisual(run, index) : null;
+    const wallClass = wallVisual ? ` maze-${wallVisual.sprite.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}` : "";
+    const dot = run.dots.has(index) ? '<i class="maze-dot" aria-label="Collectible"></i>' : "";
+    const special = run.specialPosition === index ? `<i class="maze-special ${run.specialItem}" aria-label="Special item"></i>` : "";
+    const player = run.player === index ? `<i class="maze-player${run.powerTicks > 0 ? " is-powered" : ""}${run.shieldActive ? " has-shield" : ""}" data-index="${index}" aria-label="Player"></i>` : "";
+    const enemy = run.enemy === index ? `<i class="maze-enemy" data-index="${index}" aria-label="Guardian"></i>` : "";
+    return `<span class="maze-cell${isWall ? " is-wall" : ""}${wallClass}">${dot}${special}${player}${enemy}</span>`;
   }).join("");
   const modeHud = run.timeRemaining !== null ? `<span>TIME ${run.timeRemaining}</span>` : `<span>LIVES ${run.lives}</span>`;
   const abilityHud = run.powerTicks > 0 ? `POWER ${run.powerTicks}` : run.speedTicks > 0 ? `BOOST ${run.speedTicks}` : run.shieldActive ? "SHIELD READY" : "";
+  const board = `<div class="maze-board" style="--maze-columns:${run.width};--maze-rows:${run.height}" aria-label="Collectible maze">${cells}</div>`;
+  const boardMarkup = `<div class="game-board-shell maze-board-shell">${eventSpriteMarkup("pacman", "boardFrame", "event-board-frame")}${board}</div>`;
   return `<div class="pacman-game">
     <div class="game-hud"><span>SCORE ${run.score}</span>${modeHud}<span>DOTS ${run.dots.size}</span>${abilityHud ? `<span>${abilityHud}</span>` : ""}</div>
-    <div class="maze-board" style="--maze-columns:${run.width};--maze-rows:${run.height}" aria-label="Collectible maze">${cells}</div>
+    ${boardMarkup}
     <div class="maze-controls"><div class="move-pad" aria-label="Maze movement controls"><button class="core-button up" data-action="maze-move" data-direction="up" aria-label="Move up" ${controlsDisabled}>↑</button><button class="core-button left" data-action="maze-move" data-direction="left" aria-label="Move left" ${controlsDisabled}>←</button><button class="core-button down" data-action="maze-move" data-direction="down" aria-label="Move down" ${controlsDisabled}>↓</button><button class="core-button right" data-action="maze-move" data-direction="right" aria-label="Move right" ${controlsDisabled}>→</button></div><p class="game-status">${run.status}</p></div>
   </div>`;
 }
@@ -760,14 +854,10 @@ function renderCore() {
       toggleMineFlag(Number(button.dataset.index));
     });
   });
+  renderEventShell();
 }
 
 function renderPackaging() {
-  if (state.packagingHidden) {
-    elements.packagingPanel.innerHTML = "";
-    return;
-  }
-
   const modules = [];
   const visualSkin = assetValue("visualSkin");
   const characterPackage = assetValue("characterPackage");
@@ -818,7 +908,16 @@ function renderPackaging() {
     modules.push(`<article class="package-module monetization-module countdown-module"><small>Countdown Offer</small><strong>${minutes}:${remainder}</strong><span>Limited package window</span></article>`);
   }
 
-  elements.packagingPanel.innerHTML = modules.join("");
+  const renderKey = JSON.stringify({
+    mechanic: state.mechanic,
+    assets: state.assets,
+    progress: state.run?.progress || 0,
+    packageRemaining: state.run?.packageRemaining ?? null,
+  });
+  if (elements.packagingPanel.dataset.renderKey !== renderKey) {
+    elements.packagingPanel.innerHTML = modules.join("");
+    elements.packagingPanel.dataset.renderKey = renderKey;
+  }
 }
 
 function stopGameLoop() {
@@ -833,6 +932,8 @@ function tickGameClock() {
   let coreChanged = false;
   let packageChanged = false;
   const run = state.run.core;
+
+  if (run.phase === "playing") state.run.elapsedSeconds += 1;
 
   if (state.run.packageRemaining !== null && state.run.packageRemaining > 0) {
     state.run.packageRemaining -= 1;
@@ -852,6 +953,7 @@ function tickGameClock() {
   }
   if (coreChanged) renderCore();
   if (packageChanged && !state.packagingHidden) renderPackaging();
+  if (!coreChanged && state.uiMode === "event") renderEventShell();
 }
 
 function startGameLoop() {
@@ -859,7 +961,7 @@ function startGameLoop() {
   const tetrisIntervals = { slow: 900, normal: 650, fast: 350 };
   if (state.mechanic === "tetris" && state.run?.core.phase === "playing") gameLoopTimer = setInterval(() => stepTetris(), tetrisIntervals[assetValue("fallingSpeed", "normal")]);
   if (state.mechanic === "pacman" && state.run?.core.phase === "playing") gameLoopTimer = setInterval(moveMazeEnemy, 620);
-  if (state.run && (state.run.core.timeRemaining !== null || state.run.packageRemaining !== null)) gameClockTimer = setInterval(tickGameClock, 1000);
+  if (state.run) gameClockTimer = setInterval(tickGameClock, 1000);
 }
 
 const productionMessages = [
@@ -871,6 +973,70 @@ const productionMessages = [
   "Preparing monetization…",
   "New game successfully produced.",
 ];
+
+const modeConversionMessages = [
+  "Preserving core mechanic…",
+  "Loading visual assets…",
+  "Applying event interface…",
+  "Connecting reward system…",
+  "Packaging complete.",
+];
+
+function cancelModeConversion() {
+  clearInterval(modeConversionTimer);
+  modeConversionTimer = null;
+  isConvertingMode = false;
+  elements.modeConversion.hidden = true;
+  elements.modeConversionBar.style.width = "0%";
+  if (state.step === 3 && state.run) {
+    renderEvent();
+    startGameLoop();
+  }
+}
+
+function setUiMode(mode) {
+  state.uiMode = mode;
+  state.packagingHidden = false;
+  renderEvent();
+  startGameLoop();
+}
+
+function convertOrToggleEventMode() {
+  if (isConvertingMode || !state.run) return;
+  if (state.eventReady) {
+    const nextMode = state.uiMode === "event" ? "core" : "event";
+    setUiMode(nextMode);
+    showToast(nextMode === "event" ? "Event packaging restored" : "Original mechanic revealed");
+    return;
+  }
+
+  isConvertingMode = true;
+  stopGameLoop();
+  let index = 0;
+  elements.modeConversion.hidden = false;
+  elements.modeConversionStatus.textContent = modeConversionMessages[index];
+  elements.modeConversionBar.style.width = `${100 / modeConversionMessages.length}%`;
+  renderEvent();
+  modeConversionTimer = setInterval(() => {
+    index += 1;
+    if (index < modeConversionMessages.length) {
+      elements.modeConversionStatus.textContent = modeConversionMessages[index];
+      elements.modeConversionBar.style.width = `${((index + 1) / modeConversionMessages.length) * 100}%`;
+      return;
+    }
+    clearInterval(modeConversionTimer);
+    modeConversionTimer = null;
+    isConvertingMode = false;
+    state.eventReady = true;
+    state.uiMode = "event";
+    state.packagingHidden = false;
+    elements.modeConversion.hidden = true;
+    elements.modeConversionBar.style.width = "0%";
+    renderEvent();
+    startGameLoop();
+    showToast("Mechanic unchanged. Packaging complete.");
+  }, 250);
+}
 
 function cancelProduction() {
   clearInterval(productionTimer);
@@ -902,8 +1068,12 @@ function runProductionSequence() {
     elements.productionProcess.hidden = true;
     elements.productionBar.style.width = "0%";
     state.layout = Math.floor(Math.random() * 3);
+    state.uiMode = "core";
+    state.eventReady = false;
     state.packagingHidden = false;
     state.run = createRunState();
+    renderCore();
+    renderPackaging();
     showStep(3);
   }, 190);
 }
@@ -913,7 +1083,6 @@ function generateAnotherSkin() {
     const candidates = group.options.map(([value]) => value).filter((value) => value !== state.assets[group.key]);
     state.assets[group.key] = candidates[Math.floor(Math.random() * candidates.length)] || group.options[0][0];
   });
-  state.packagingHidden = false;
   state.layout = Math.floor(Math.random() * 3);
   state.run.packageRemaining = assetValue("monetizationLayer") === "countdownOffer" ? 900 : null;
   syncBuilder();
@@ -926,7 +1095,11 @@ function generateAnotherSkin() {
 document.querySelectorAll(".choice-card[data-mechanic]").forEach((button) => {
   button.addEventListener("click", () => {
     const nextMechanic = button.dataset.mechanic;
-    if (nextMechanic !== state.mechanic) state.run = null;
+    if (nextMechanic !== state.mechanic) {
+      state.run = null;
+      state.uiMode = "core";
+      state.eventReady = false;
+    }
     state.mechanic = nextMechanic;
     state.packagingHidden = false;
     syncBuilder();
@@ -950,11 +1123,7 @@ elements.continueButton.addEventListener("click", () => { if (state.mechanic) sh
 elements.backButton.addEventListener("click", () => showStep(1));
 elements.buildButton.addEventListener("click", runProductionSequence);
 elements.backToBuilder.addEventListener("click", () => showStep(2));
-elements.revealMechanic.addEventListener("click", () => {
-  state.packagingHidden = !state.packagingHidden;
-  renderEvent();
-  showToast(state.packagingHidden ? "Original mechanic revealed" : "Packaging restored");
-});
+elements.revealMechanic.addEventListener("click", convertOrToggleEventMode);
 elements.anotherSkin.addEventListener("click", generateAnotherSkin);
 elements.restartGame.addEventListener("click", () => {
   stopGameLoop();
@@ -963,6 +1132,7 @@ elements.restartGame.addEventListener("click", () => {
   if (packageRemaining !== null && packageRemaining !== undefined) state.run.packageRemaining = packageRemaining;
   renderCore();
   if (!state.packagingHidden) renderPackaging();
+  if (state.uiMode === "event") renderEventShell();
   startGameLoop();
   showToast("Game state restarted");
 });
