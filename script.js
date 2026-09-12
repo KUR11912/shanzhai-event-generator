@@ -8,33 +8,39 @@ const mechanics = {
     coreLoop: "Falling Blocks → Move and Rotate → Complete Lines → Clear Lines",
   },
   pacman: {
-    name: "Pac-Man", formula: "PAC-MAN", title: "Signal Maze Relay", mark: "◆",
+    name: "Maze Chase", formula: "MAZE CHASE", title: "Signal Maze Relay", mark: "◆",
     coreLoop: "Navigate the Maze → Collect Dots → Avoid or Chase Enemies",
   },
 };
 
-const assetCatalog = {
-  minesweeper: [
-    { key: "boardSize", icon: "▦", label: "Board Size", description: "Changes the playable grid.", options: [["small", "Small"], ["medium", "Medium"], ["large", "Large"]] },
-    { key: "mineDensity", icon: "✹", label: "Mine Density", description: "Changes how many mines are hidden.", options: [["low", "Low"], ["normal", "Normal"], ["high", "High"]] },
-    { key: "gameMode", icon: "◷", label: "Game Mode", description: "Adds a timing or survival rule.", options: [["classic", "Classic"], ["timeLimit", "Time Limit"], ["limitedLives", "Limited Lives"]] },
-    { key: "specialTile", icon: "◇", label: "Special Tile", description: "Adds one board ability.", options: [["chainReveal", "Chain Reveal"], ["safetyShield", "Safety Shield"], ["scoreMultiplier", "Score Multiplier"]] },
-    { key: "visualTheme", icon: "✦", label: "Visual Theme", description: "Reskins the same board rules.", options: [["military", "Military"], ["cyber", "Cyber"], ["fantasy", "Fantasy"]] },
-  ],
-  tetris: [
-    { key: "fallingSpeed", icon: "↓", label: "Falling Speed", description: "Changes the block drop rhythm.", options: [["slow", "Slow"], ["normal", "Normal"], ["fast", "Fast"]] },
-    { key: "boardRule", icon: "▤", label: "Board Rule", description: "Adds pressure around line clearing.", options: [["classic", "Classic"], ["risingFloor", "Rising Floor"], ["timeAttack", "Time Attack"]] },
-    { key: "extraFeature", icon: "＋", label: "Extra Feature", description: "Adds one tactical tool.", options: [["holdBlock", "Hold Block"], ["nextPreview", "Next Block Preview"], ["comboBonus", "Combo Bonus"]] },
-    { key: "specialBlock", icon: "◆", label: "Special Block", description: "Changes every fourth falling piece.", options: [["bombBlock", "Bomb Block"], ["lockedBlock", "Locked Block"], ["scoreBlock", "Score Block"]] },
-    { key: "visualTheme", icon: "✦", label: "Visual Theme", description: "Reskins the same falling-block rules.", options: [["retro", "Retro"], ["cyber", "Cyber"], ["fantasy", "Fantasy"]] },
-  ],
-  pacman: [
-    { key: "mazeLayout", icon: "▦", label: "Maze Layout", description: "Changes the route while preserving navigation.", options: [["classic", "Classic"], ["symmetrical", "Symmetrical"], ["multipleRooms", "Multiple Rooms"]] },
-    { key: "enemyBehaviour", icon: "●", label: "Enemy Behaviour", description: "Changes how the roaming echo moves.", options: [["random", "Random"], ["patrol", "Patrol"], ["chase", "Chase"]] },
-    { key: "gameMode", icon: "◷", label: "Game Mode", description: "Adds a timing or survival rule.", options: [["classic", "Classic"], ["timeLimit", "Time Limit"], ["limitedLives", "Limited Lives"]] },
-    { key: "specialItem", icon: "◇", label: "Special Item", description: "Adds one collectible ability.", options: [["powerPellet", "Power Pellet"], ["speedBoost", "Speed Boost"], ["temporaryShield", "Temporary Shield"]] },
-    { key: "visualTheme", icon: "✦", label: "Visual Theme", description: "Reskins the same maze rules.", options: [["arcade", "Arcade"], ["cyber", "Cyber"], ["fantasy", "Fantasy"]] },
-  ],
+const packagingCatalog = [
+  { key: "visualSkin", icon: "✦", label: "Visual Skin", description: "Replaces colors, scenery, icons, and effects.", options: [["fantasy", "Fantasy"], ["cyber", "Cyber"], ["military", "Military"]] },
+  { key: "characterPackage", icon: "◇", label: "Character Package", description: "Adds an original branded event host.", options: [["animeHero", "Anime Hero"], ["cuteMascot", "Cute Mascot"], ["tacticalOperator", "Tactical Operator"]] },
+  { key: "eventStory", icon: "≋", label: "Event Story", description: "Rewrites the event title and premise.", options: [["summerFestival", "Summer Festival"], ["worldCrisis", "World Crisis"], ["limitedTournament", "Limited Tournament"]] },
+  { key: "rewardSystem", icon: "◆", label: "Reward System", description: "Adds rewards around the unchanged game.", options: [["eventCurrency", "Event Currency"], ["dailyMissions", "Daily Missions"], ["limitedRewards", "Limited Rewards"]] },
+  { key: "monetizationLayer", icon: "✧", label: "Monetization Layer", description: "Adds a commercial live-service frame.", options: [["gachaBanner", "Gacha Banner"], ["battlePass", "Battle Pass"], ["countdownOffer", "Countdown Offer"]] },
+];
+
+const packageContent = {
+  characterPackage: {
+    animeHero: { name: "Astra Vale", role: "Limited Event Hero" },
+    cuteMascot: { name: "Pip-03", role: "Festival Mascot" },
+    tacticalOperator: { name: "Commander Rook", role: "Operations Guide" },
+  },
+  eventStory: {
+    summerFestival: {
+      titles: { minesweeper: "Sunlit Relic Hunt", tetris: "Starlight Stack Festival", pacman: "Firefly Maze Parade" },
+      copy: "A seasonal celebration transforms a familiar challenge into a limited-time attraction.",
+    },
+    worldCrisis: {
+      titles: { minesweeper: "Faultline Emergency", tetris: "Last Stack Protocol", pacman: "Signal Maze Crisis" },
+      copy: "The world is ending again. Complete the proven activity loop before the warning reaches zero.",
+    },
+    limitedTournament: {
+      titles: { minesweeper: "Survey Masters Cup", tetris: "Grand Stack Championship", pacman: "Neon Relay Tournament" },
+      copy: "A ranked event reframes the same mechanic as an exclusive competitive season.",
+    },
+  },
 };
 
 const mechanicOrder = Object.keys(mechanics);
@@ -47,27 +53,32 @@ const state = {
   layout: saved?.layout || 0,
   step: saved?.step || 1,
   run: null,
+  packagingHidden: false,
 };
 
 let toastTimer;
 let gameLoopTimer;
 let gameClockTimer;
+let productionTimer;
+let isProducing = false;
 const $ = (selector) => document.querySelector(selector);
 const elements = {
   templateStep: $("#step-template"), assetsStep: $("#step-assets"), runStep: $("#step-run"),
   continueButton: $("#continue-button"), backButton: $("#back-button"), buildButton: $("#build-button"),
   backToBuilder: $("#back-to-builder"), restartGame: $("#restart-game"),
+  revealMechanic: $("#reveal-mechanic"), anotherSkin: $("#another-skin"),
   selectedTemplateName: $("#selected-template-name"), assetGrid: $("#asset-grid"), formulaPreview: $("#formula-preview"), formulaNumber: $("#formula-number"),
   coreMechanicSummary: $("#core-mechanic-summary"), addedElementsSummary: $("#added-elements-summary"),
   gameFrame: $("#game-frame"), gameStage: $("#game-stage"), eventMark: $("#event-mark"), eventTitle: $("#event-title"),
   packagingPanel: $("#packaging-panel"),
+  templateFeedback: $("#template-feedback"), productionProcess: $("#production-process"), productionStatus: $("#production-status"), productionBar: $("#production-bar"),
   toast: $("#toast"),
 };
 
 function normalizeAssets(mechanic, rawAssets) {
   const normalized = {};
   if (!mechanic || !rawAssets || typeof rawAssets !== "object") return normalized;
-  assetCatalog[mechanic].forEach((group) => {
+  packagingCatalog.forEach((group) => {
     if (group.options.some(([value]) => value === rawAssets[group.key])) normalized[group.key] = rawAssets[group.key];
   });
   return normalized;
@@ -101,7 +112,7 @@ function assetValue(key, fallback = null) {
 
 function selectedAssetEntries() {
   if (!state.mechanic) return [];
-  return assetCatalog[state.mechanic].flatMap((group) => {
+  return packagingCatalog.flatMap((group) => {
     const value = state.assets[group.key];
     const option = group.options.find(([optionValue]) => optionValue === value);
     return option ? [{ key: group.key, group: group.label, value, label: option[1], icon: group.icon }] : [];
@@ -133,7 +144,7 @@ function renderAssetGrid() {
     elements.assetGrid.innerHTML = "";
     return;
   }
-  elements.assetGrid.innerHTML = assetCatalog[state.mechanic].map((group) => {
+  elements.assetGrid.innerHTML = packagingCatalog.map((group) => {
     const selected = state.assets[group.key] || "";
     const options = group.options.map(([value, label]) => `<button class="asset-option" type="button" data-asset-group="${group.key}" data-asset-value="${value}" aria-pressed="${selected === value}">${label}</button>`).join("");
     return `<article class="choice-card asset-card asset-group" data-selected="${Boolean(selected)}">
@@ -150,9 +161,11 @@ function syncBuilder() {
   renderAssetGrid();
   const selectedAssets = selectedAssetEntries();
   elements.continueButton.disabled = !state.mechanic;
-  elements.buildButton.disabled = !state.mechanic || selectedAssets.length === 0;
+  elements.buildButton.disabled = !state.mechanic || selectedAssets.length === 0 || isProducing;
+  elements.backButton.disabled = isProducing;
+  elements.templateFeedback.hidden = !state.mechanic;
   elements.selectedTemplateName.textContent = state.mechanic ? mechanics[state.mechanic].name : "—";
-  elements.formulaPreview.textContent = selectedAssets.length ? formulaText() : "Choose at least one asset.";
+  elements.formulaPreview.textContent = selectedAssets.length ? formulaText() : "Choose at least one packaging module.";
   elements.formulaPreview.classList.toggle("is-ready", selectedAssets.length > 0);
   document.querySelectorAll("[data-progress]").forEach((item) => {
     const value = Number(item.dataset.progress);
@@ -188,23 +201,37 @@ function createRunState() {
     tetris: createTetrisState,
     pacman: createPacmanState,
   };
-  return { core: coreStateBuilders[state.mechanic](), progress: 0 };
+  return {
+    core: coreStateBuilders[state.mechanic](),
+    progress: 0,
+    packageRemaining: assetValue("monetizationLayer") === "countdownOffer" ? 900 : null,
+  };
+}
+
+function currentEventTitle() {
+  const story = packageContent.eventStory[assetValue("eventStory")];
+  return story?.titles[state.mechanic] || mechanics[state.mechanic].title;
 }
 
 function renderEvent() {
   const data = mechanics[state.mechanic];
+  const packaged = !state.packagingHidden;
   elements.gameFrame.dataset.mechanic = state.mechanic;
   elements.gameFrame.dataset.layout = String(state.layout);
-  elements.gameFrame.dataset.theme = assetValue("visualTheme", "default");
-  elements.gameFrame.classList.add("has-packaging");
+  elements.gameFrame.dataset.theme = packaged ? assetValue("visualSkin", "default") : "default";
+  elements.gameFrame.dataset.story = packaged ? assetValue("eventStory", "none") : "none";
+  elements.gameFrame.classList.toggle("has-packaging", packaged && selectedAssetEntries().length > 0);
+  elements.gameFrame.classList.toggle("is-unpackaged", !packaged);
   elements.eventMark.textContent = data.mark;
-  elements.eventTitle.textContent = data.title;
+  elements.eventTitle.textContent = packaged ? currentEventTitle() : `${data.name} / CORE BUILD`;
   elements.formulaNumber.textContent = formulaCode();
   elements.coreMechanicSummary.textContent = data.coreLoop;
-  elements.addedElementsSummary.textContent = selectedAssetEntries().map((entry) => `${entry.group}: ${entry.label}`).join(" · ");
-  elements.packagingPanel.hidden = false;
+  elements.addedElementsSummary.textContent = packaged ? selectedAssetEntries().map((entry) => `${entry.group}: ${entry.label}`).join(" · ") : "Packaging removed. Core mechanic unchanged.";
+  elements.packagingPanel.hidden = !packaged;
+  elements.revealMechanic.textContent = packaged ? "Reveal the Original Mechanic" : "Restore the Packaging";
   renderCore();
-  renderPackaging();
+  if (packaged) renderPackaging();
+  else elements.packagingPanel.innerHTML = "";
 }
 
 const mineSizes = { small: 7, medium: 9, large: 12 };
@@ -736,7 +763,62 @@ function renderCore() {
 }
 
 function renderPackaging() {
-  elements.packagingPanel.innerHTML = selectedAssetEntries().map((entry) => `<article class="package-module extension-module"><span>${entry.icon}</span><small>${entry.group}</small><strong>${entry.label}</strong></article>`).join("");
+  if (state.packagingHidden) {
+    elements.packagingPanel.innerHTML = "";
+    return;
+  }
+
+  const modules = [];
+  const visualSkin = assetValue("visualSkin");
+  const characterPackage = assetValue("characterPackage");
+  const eventStory = assetValue("eventStory");
+  const rewardSystem = assetValue("rewardSystem");
+  const monetizationLayer = assetValue("monetizationLayer");
+
+  if (visualSkin) {
+    const label = packagingCatalog[0].options.find(([value]) => value === visualSkin)?.[1];
+    modules.push(`<article class="package-module extension-module skin-module"><span>✦</span><small>Visual Skin</small><strong>${label}</strong></article>`);
+  }
+
+  if (characterPackage) {
+    const character = packageContent.characterPackage[characterPackage];
+    modules.push(`<article class="package-module character-package">
+      <span class="abstract-portrait ${characterPackage}" aria-hidden="true"><i></i><b></b></span>
+      <small>Character Package</small><strong>${character.name}</strong><em>${character.role}</em>
+    </article>`);
+  }
+
+  if (eventStory) {
+    const story = packageContent.eventStory[eventStory];
+    const storyLabel = packagingCatalog[2].options.find(([value]) => value === eventStory)?.[1];
+    modules.push(`<article class="package-module story-package"><small>${storyLabel}</small><strong>${story.titles[state.mechanic]}</strong><p>${story.copy}</p></article>`);
+  }
+
+  if (rewardSystem === "eventCurrency") {
+    const amounts = { minesweeper: 1280, tetris: 1840, pacman: 960 };
+    modules.push(`<article class="package-module currency-module"><span class="module-icon">◆</span><div><small>Event Currency</small><strong>${amounts[state.mechanic].toLocaleString()}</strong><span>EVENT TOKENS</span></div></article>`);
+  }
+  if (rewardSystem === "dailyMissions") {
+    modules.push(`<article class="package-module mission-module"><small>Daily Mission</small><strong>Complete the core activity</strong><div class="progress-bar"><i style="width:${state.run?.progress || 0}%"></i></div><small>${state.run?.progress || 0}%</small></article>`);
+  }
+  if (rewardSystem === "limitedRewards") {
+    modules.push(`<article class="package-module reward-module"><small>Limited Rewards</small><div class="reward-row"><span class="reward-item">✦<small>Badge</small></span><span class="reward-item">◇<small>Frame</small></span><span class="reward-item">◆<small>Tokens</small></span></div></article>`);
+  }
+
+  if (monetizationLayer === "gachaBanner") {
+    modules.push(`<article class="package-module monetization-module gacha-module"><small>Limited Signal Banner</small><strong>FEATURED PACKAGE UP</strong><span>Display rate 1.5% · Guarantee 80</span></article>`);
+  }
+  if (monetizationLayer === "battlePass") {
+    modules.push(`<article class="package-module monetization-module mission-module"><small>Premium Event Pass</small><strong>Tier 07 / 30</strong><div class="progress-bar"><i style="width:23%"></i></div><span>Premium track available</span></article>`);
+  }
+  if (monetizationLayer === "countdownOffer") {
+    const seconds = Math.max(0, state.run?.packageRemaining ?? 900);
+    const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
+    const remainder = String(seconds % 60).padStart(2, "0");
+    modules.push(`<article class="package-module monetization-module countdown-module"><small>Countdown Offer</small><strong>${minutes}:${remainder}</strong><span>Limited package window</span></article>`);
+  }
+
+  elements.packagingPanel.innerHTML = modules.join("");
 }
 
 function stopGameLoop() {
@@ -747,16 +829,29 @@ function stopGameLoop() {
 }
 
 function tickGameClock() {
-  if (state.step !== 3 || !state.run || state.run.core.phase !== "playing" || state.run.core.timeRemaining === null) return;
+  if (state.step !== 3 || !state.run) return;
+  let coreChanged = false;
+  let packageChanged = false;
   const run = state.run.core;
-  run.timeRemaining -= 1;
-  if (run.timeRemaining <= 0) {
-    run.timeRemaining = 0;
-    run.phase = state.mechanic === "tetris" && run.lines > 0 ? "won" : "lost";
-    run.status = state.mechanic === "tetris" && run.lines > 0 ? "Time attack complete." : "Time expired.";
-    stopGameLoop();
+
+  if (state.run.packageRemaining !== null && state.run.packageRemaining > 0) {
+    state.run.packageRemaining -= 1;
+    packageChanged = true;
   }
-  renderCore();
+
+  if (run.phase === "playing" && run.timeRemaining !== null) {
+    run.timeRemaining -= 1;
+    coreChanged = true;
+    if (run.timeRemaining <= 0) {
+      run.timeRemaining = 0;
+      run.phase = state.mechanic === "tetris" && run.lines > 0 ? "won" : "lost";
+      run.status = state.mechanic === "tetris" && run.lines > 0 ? "Time attack complete." : "Time expired.";
+      clearInterval(gameLoopTimer);
+      gameLoopTimer = null;
+    }
+  }
+  if (coreChanged) renderCore();
+  if (packageChanged && !state.packagingHidden) renderPackaging();
 }
 
 function startGameLoop() {
@@ -764,15 +859,76 @@ function startGameLoop() {
   const tetrisIntervals = { slow: 900, normal: 650, fast: 350 };
   if (state.mechanic === "tetris" && state.run?.core.phase === "playing") gameLoopTimer = setInterval(() => stepTetris(), tetrisIntervals[assetValue("fallingSpeed", "normal")]);
   if (state.mechanic === "pacman" && state.run?.core.phase === "playing") gameLoopTimer = setInterval(moveMazeEnemy, 620);
-  if (state.run?.core.phase === "playing" && state.run.core.timeRemaining !== null) gameClockTimer = setInterval(tickGameClock, 1000);
+  if (state.run && (state.run.core.timeRemaining !== null || state.run.packageRemaining !== null)) gameClockTimer = setInterval(tickGameClock, 1000);
+}
+
+const productionMessages = [
+  "Extracting proven mechanic…",
+  "Replacing visual identity…",
+  "Adding character package…",
+  "Installing event story…",
+  "Connecting reward system…",
+  "Preparing monetization…",
+  "New game successfully produced.",
+];
+
+function cancelProduction() {
+  clearInterval(productionTimer);
+  productionTimer = null;
+  isProducing = false;
+  elements.productionProcess.hidden = true;
+  elements.productionBar.style.width = "0%";
+  syncBuilder();
+}
+
+function runProductionSequence() {
+  if (isProducing || !state.mechanic || selectedAssetEntries().length === 0) return;
+  isProducing = true;
+  let index = 0;
+  elements.productionProcess.hidden = false;
+  elements.productionStatus.textContent = productionMessages[index];
+  elements.productionBar.style.width = `${100 / productionMessages.length}%`;
+  syncBuilder();
+  productionTimer = setInterval(() => {
+    index += 1;
+    if (index < productionMessages.length) {
+      elements.productionStatus.textContent = productionMessages[index];
+      elements.productionBar.style.width = `${((index + 1) / productionMessages.length) * 100}%`;
+      return;
+    }
+    clearInterval(productionTimer);
+    productionTimer = null;
+    isProducing = false;
+    elements.productionProcess.hidden = true;
+    elements.productionBar.style.width = "0%";
+    state.layout = Math.floor(Math.random() * 3);
+    state.packagingHidden = false;
+    state.run = createRunState();
+    showStep(3);
+  }, 190);
+}
+
+function generateAnotherSkin() {
+  packagingCatalog.forEach((group) => {
+    const candidates = group.options.map(([value]) => value).filter((value) => value !== state.assets[group.key]);
+    state.assets[group.key] = candidates[Math.floor(Math.random() * candidates.length)] || group.options[0][0];
+  });
+  state.packagingHidden = false;
+  state.layout = Math.floor(Math.random() * 3);
+  state.run.packageRemaining = assetValue("monetizationLayer") === "countdownOffer" ? 900 : null;
+  syncBuilder();
+  renderEvent();
+  startGameLoop();
+  persistState();
+  showToast("Same mechanic. New product.");
 }
 
 document.querySelectorAll(".choice-card[data-mechanic]").forEach((button) => {
   button.addEventListener("click", () => {
     const nextMechanic = button.dataset.mechanic;
-    if (nextMechanic !== state.mechanic) state.assets = {};
+    if (nextMechanic !== state.mechanic) state.run = null;
     state.mechanic = nextMechanic;
-    state.run = null;
+    state.packagingHidden = false;
     syncBuilder();
     persistState();
   });
@@ -792,24 +948,28 @@ elements.assetGrid.addEventListener("click", (event) => {
 
 elements.continueButton.addEventListener("click", () => { if (state.mechanic) showStep(2); });
 elements.backButton.addEventListener("click", () => showStep(1));
-elements.buildButton.addEventListener("click", () => {
-  if (!state.mechanic || selectedAssetEntries().length === 0) return;
-  state.layout = Math.floor(Math.random() * 3);
-  state.run = createRunState();
-  showStep(3);
-});
+elements.buildButton.addEventListener("click", runProductionSequence);
 elements.backToBuilder.addEventListener("click", () => showStep(2));
+elements.revealMechanic.addEventListener("click", () => {
+  state.packagingHidden = !state.packagingHidden;
+  renderEvent();
+  showToast(state.packagingHidden ? "Original mechanic revealed" : "Packaging restored");
+});
+elements.anotherSkin.addEventListener("click", generateAnotherSkin);
 elements.restartGame.addEventListener("click", () => {
   stopGameLoop();
+  const packageRemaining = state.run?.packageRemaining;
   state.run = createRunState();
+  if (packageRemaining !== null && packageRemaining !== undefined) state.run.packageRemaining = packageRemaining;
   renderCore();
-  renderPackaging();
+  if (!state.packagingHidden) renderPackaging();
   startGameLoop();
   showToast("Game state restarted");
 });
 
 document.addEventListener("keydown", (event) => {
   if (state.step !== 3 || !state.run) return;
+  if (event.altKey || event.ctrlKey || event.metaKey) return;
   if (state.mechanic === "tetris") {
     const tetrisKeys = {
       ArrowLeft: () => moveTetris(-1), ArrowRight: () => moveTetris(1), ArrowDown: () => stepTetris(true), ArrowUp: rotateTetris,
@@ -829,6 +989,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("popstate", (event) => {
+  if (isProducing) cancelProduction();
   showStep(Number(event.state?.factoryStep) || 1, false);
 });
 

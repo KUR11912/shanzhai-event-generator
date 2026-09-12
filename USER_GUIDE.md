@@ -2,60 +2,41 @@
 
 ## 三步流程
 
-1. `01 TEMPLATE`：选择 `Minesweeper`、`Tetris` 或 `Pac-Man`，确定不可改变的核心玩法。
-2. `02 ASSETS`：从当前模板专属的五组扩展元素中选择至少一项。同组只能选择一个选项，再点一次可取消。
-3. `03 RUN`：点击 `Build & Run`，运行由核心玩法和扩展元素组合出的可玩版本。
+1. `01 CORE`：选择 `Minesweeper`、`Tetris` 或 `Maze Chase`。Template 只决定不可改变的核心玩法。
+2. `02 PACKAGE`：从五类包装模块中选择至少一项；每类最多选择一个选项，再点已选项即可取消。
+3. `03 PRODUCT`：点击 `Build & Run`，短暂的流水线生成过程结束后即可游玩包装后的游戏。
 
-返回上一步或刷新页面时，兼容的 Template 与 Assets 会通过浏览器 `localStorage` 保留。更换 Template 会自动清除上一种游戏的不兼容 Assets。
+返回上一步或刷新页面时，Template 与 Packaging 选择会通过浏览器 `localStorage` 保留。更换 Template 会清除旧游戏运行状态，但保留包装选择。
 
-## Template 与 Assets
+## 核心玩法
 
-### Minesweeper
+- `Minesweeper`：翻开安全格、识别并标记地雷、清空棋盘。左键翻格，右键插旗或取消旗帜。
+- `Tetris`：方块下落、移动旋转、堆叠并消除完整行。`←` / `→` 移动，`↓` 加速，`↑` 旋转，`Space` 快速落下。
+- `Maze Chase`：在迷宫内收集豆子并躲避敌人。使用方向键或 `WASD` 移动。
 
-核心循环：`Reveal Tiles → Identify Mines → Mark Mines → Clear the Board`
+包装选择不会改变以上规则。
 
-- `Board Size`：Small、Medium、Large 分别生成 7×7、9×9、12×12 棋盘。
-- `Mine Density`：Low、Normal、High 改变地雷比例。
-- `Game Mode`：Classic 使用标准规则；Time Limit 增加倒计时；Limited Lives 允许多次触雷后再失败。
-- `Special Tile`：Chain Reveal 首次翻开时额外展开相邻安全格；Safety Shield 抵消第一次触雷；Score Multiplier 将安全格分数加倍。
-- `Visual Theme`：Military、Cyber、Fantasy 改变棋盘配色与边框表现。
+## Packaging Modules
 
-操作：左键翻开格子，右键插旗或取消旗帜。第一格不会触雷，空白区域会自动展开。
+- `Visual Skin`：Fantasy、Cyber、Military。改变三个游戏各自的背景、棋盘、方块、迷宫、角色和视觉效果。
+- `Character Package`：Anime Hero、Cute Mascot、Tactical Operator。加入不同的原创活动角色与身份包装。
+- `Event Story`：Summer Festival、World Crisis、Limited Tournament。改变活动标题、介绍与背景语境。
+- `Reward System`：Event Currency 显示活动货币；Daily Missions 显示随游戏进度变化的任务；Limited Rewards 显示限定奖励。
+- `Monetization Layer`：Gacha Banner 显示限定卡池包装；Battle Pass 显示活动通行证；Countdown Offer 显示持续倒计时的限时销售模块。
 
-### Tetris
+## PRODUCT 页面按钮
 
-核心循环：`Falling Blocks → Move and Rotate → Complete Lines → Clear Lines`
+- `Back to Builder`：返回包装选择页并保留所有选择。
+- `Reveal the Original Mechanic`：隐藏皮肤、角色、故事、奖励和商业包装，保持当前棋盘、分数与运行状态不变。
+- `Restore the Packaging`：恢复刚才隐藏的全部包装，可以反复切换。
+- `Generate Another Skin`：保持当前核心 Template 和游戏状态，只随机替换五类包装。
+- `Restart Game`：只重启当前小游戏，不清除 Template 或 Packaging。
 
-- `Falling Speed`：Slow、Normal、Fast 改变自动下落速度。
-- `Board Rule`：Classic 使用标准棋盘；Rising Floor 每锁定五个方块抬升一行；Time Attack 增加 90 秒倒计时。
-- `Extra Feature`：Hold Block 可用 `C` 或 `Hold` 保存方块；Next Block Preview 显示下一个方块；Combo Bonus 为连续消行增加分数。
-- `Special Block`：每第四个方块成为 Bomb Block、Locked Block 或 Score Block，分别清除落点附近格子、禁止旋转或奖励 250 分。
-- `Visual Theme`：Retro、Cyber、Fantasy 改变方块、棋盘与强调色。
-
-操作：`←` / `→` 移动，`↓` 加速下降，`↑` 旋转，`Space` 快速落下；选择 Hold Block 时可按 `C`。
-
-### Pac-Man
-
-核心循环：`Navigate the Maze → Collect Dots → Avoid or Chase Enemies`
-
-- `Maze Layout`：Classic、Symmetrical、Multiple Rooms 使用三张不同的固定迷宫。
-- `Enemy Behaviour`：Random 随机移动；Patrol 按固定方向巡逻；Chase 优先靠近玩家。
-- `Game Mode`：Classic 使用三条生命；Time Limit 增加 90 秒倒计时；Limited Lives 改为两条生命。
-- `Special Item`：Power Pellet 可暂时反击敌人；Speed Boost 可暂时移动两格；Temporary Shield 抵消一次碰撞。
-- `Visual Theme`：Arcade、Cyber、Fantasy 改变迷宫、角色与强调色。
-
-操作：方向键或 `WASD` 移动。收集全部豆子获胜；碰到敌人会失去生命。
-
-## RUN 页面
-
-- `Core Mechanic` 显示当前模板固定不变的核心循环。
-- `Added Elements` 显示本次实际加入的扩展元素。
-- `Back to Builder` 返回 Assets 页面并保留选择。
-- `Restart Game` 只重启当前小游戏，不清空 Template 或 Assets。
+结果下方的生产百分比是用于艺术讽刺的虚构数据，不代表真实行业统计。
 
 ## 当前实现范围
 
-三个小游戏均使用原生 HTML、CSS 和 JavaScript 以及原创几何图形，不嵌入第三方网站。当前为课堂展示规模的单局原型，没有音频、联网排行榜、存档进度或商业游戏素材。
+三个小游戏均使用原生 HTML、CSS、JavaScript 和原创几何图形。当前为课堂展示规模的单局原型，没有音频、联网排行榜、云存档、付费系统或商业游戏素材。包装面板是概念展示，不执行真实购买或抽卡。
 
 ## 运行方式
 
