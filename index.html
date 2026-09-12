@@ -6,7 +6,7 @@
     <meta name="description" content="A three-step classroom prototype about formulaic game-event production." />
     <title>Shanzhai Game Factory</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1020'/%3E%3Cpath d='M13 22h22l-8 9h24L30 52l7-14H13z' fill='%233de5d4'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="style.css?v=9" />
+    <link rel="stylesheet" href="style.css?v=10" />
   </head>
   <body>
     <header class="progress-header" aria-label="Production progress">
@@ -48,26 +48,7 @@
           <p>Choose the elements used to package the game.</p>
         </header>
 
-        <div class="choice-grid asset-grid" aria-label="Commercial packaging assets">
-          <button class="choice-card asset-card" type="button" data-layer="character" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">◇</span><strong>Anime Character</strong><small>An original event host.</small><i aria-hidden="true">✓</i>
-          </button>
-          <button class="choice-card asset-card" type="button" data-layer="story" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">≋</span><strong>Event Story</strong><small>A short limited-time premise.</small><i aria-hidden="true">✓</i>
-          </button>
-          <button class="choice-card asset-card" type="button" data-layer="currency" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">◆</span><strong>Event Currency</strong><small>A collectible exchange token.</small><i aria-hidden="true">✓</i>
-          </button>
-          <button class="choice-card asset-card" type="button" data-layer="missions" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">☷</span><strong>Daily Missions</strong><small>A repeatable progress goal.</small><i aria-hidden="true">✓</i>
-          </button>
-          <button class="choice-card asset-card" type="button" data-layer="rewards" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">✺</span><strong>Limited Rewards</strong><small>A small scarcity display.</small><i aria-hidden="true">✓</i>
-          </button>
-          <button class="choice-card asset-card" type="button" data-layer="gacha" aria-pressed="false">
-            <span class="choice-icon" aria-hidden="true">✧</span><strong>Gacha UI</strong><small>A draw button and pity count.</small><i aria-hidden="true">✓</i>
-          </button>
-        </div>
+        <div class="choice-grid asset-grid" id="asset-grid" aria-label="Template extension assets"></div>
 
         <p class="formula-preview" id="formula-preview" aria-live="polite">Choose at least one asset.</p>
 
@@ -79,7 +60,11 @@
 
       <section class="run-step" id="step-run" data-step="3" aria-labelledby="event-title" hidden>
         <header class="run-toolbar">
-          <div class="system-stamp"><span>PREFAB EVENT GENERATED</span><strong id="formula-number">FORMULA NO. SZ-042</strong></div>
+          <div class="system-stamp">
+            <span>PREFAB EVENT GENERATED</span><strong id="formula-number">FORMULA NO. SZ-042</strong>
+            <small><b>Core Mechanic:</b> <span id="core-mechanic-summary">—</span></small>
+            <small><b>Added Elements:</b> <span id="added-elements-summary">—</span></small>
+          </div>
           <div class="run-actions">
             <button class="button button-secondary" id="back-to-builder" type="button"><span aria-hidden="true">←</span> Back to Builder</button>
             <button class="button button-secondary" id="restart-game" type="button">Restart Game <span aria-hidden="true">↻</span></button>
@@ -90,32 +75,11 @@
           <header class="event-header">
             <div class="event-mark" id="event-mark" aria-hidden="true">✦</div>
             <h1 id="event-title">Neon Bloom Protocol</h1>
-            <article class="character-module" data-run-layer="character" hidden>
-              <div class="abstract-portrait"><i></i><b></b></div><strong id="character-name">Astra Venn</strong>
-            </article>
           </header>
-
-          <article class="story-module" data-run-layer="story" hidden>
-            <strong id="story-speaker">Astra Venn</strong><p id="story-text">The copied signal is multiplying again. Keep moving.</p>
-          </article>
 
           <div class="game-body">
             <section class="core-game" aria-label="Playable core mechanic"><div class="core-stage" id="game-stage"></div></section>
-
-            <section class="packaging-panel" id="packaging-panel" aria-label="Selected commercial packaging">
-              <article class="package-module currency-module" data-run-layer="currency" hidden>
-                <span class="module-icon" aria-hidden="true">◆</span><div><strong id="currency-value">1,840</strong><small id="currency-name">PULSE SHARDS</small></div>
-              </article>
-              <article class="package-module mission-module" data-run-layer="missions" hidden>
-                <strong>Daily Mission</strong><p id="mission-name">Move through the arena</p><div class="progress-bar"><i id="mission-bar"></i></div><small id="mission-value">0%</small>
-              </article>
-              <article class="package-module reward-module" data-run-layer="rewards" hidden>
-                <strong>Limited Rewards</strong><div class="reward-row" id="reward-row"></div>
-              </article>
-              <article class="package-module gacha-module" data-run-layer="gacha" hidden>
-                <strong id="gacha-title">ASTRA / OVERCLOCKED</strong><button class="draw-button" id="gacha-pull" type="button">Draw ×1</button><small id="gacha-status">Guarantee 18 / 80</small>
-              </article>
-            </section>
+            <section class="packaging-panel" id="packaging-panel" aria-label="Selected extension assets"></section>
           </div>
         </article>
       </section>
@@ -123,6 +87,6 @@
 
     <output class="toast" id="toast" aria-live="polite"></output>
     <noscript><p class="noscript">This prototype requires JavaScript.</p></noscript>
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
   </body>
 </html>
