@@ -1,0 +1,246 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --surface: #141b2d;
+  --surface-2: #1a2338;
+  --line: #2b3650;
+  --text: #f5f7fb;
+  --muted: #9aa6bd;
+  --cyan: #3de5d4;
+  --pink: #f052a7;
+  --yellow: #f3ca5b;
+  --accent: var(--cyan);
+  --radius: 16px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 0; }
+body { min-width: 0; min-height: 100vh; margin: 0; color: var(--text); background: var(--bg); line-height: 1.5; overflow-x: hidden; }
+button { color: inherit; font: inherit; }
+button:not(:disabled) { cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+[hidden] { display: none !important; }
+h1, h2, h3, p { margin: 0; }
+
+.progress-header { height: 64px; display: grid; place-items: center; border-bottom: 1px solid var(--line); background: #0e1424; }
+.progress-track { width: min(520px, calc(100% - 32px)); margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; }
+.progress-track li { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; color: #66728a; font-size: .76rem; font-weight: 800; letter-spacing: .08em; }
+.progress-track li:not(:last-child)::after { content: "→"; position: absolute; right: -4px; color: #475269; }
+.progress-track b { font-size: .7rem; }
+.progress-track li.is-current { color: var(--cyan); }
+.progress-track li.is-complete { color: #b8c1d2; }
+
+.app-shell { width: min(1240px, calc(100% - 40px)); min-height: calc(100vh - 64px); margin: 0 auto; }
+.wizard-step { min-height: calc(100vh - 64px); padding: clamp(42px, 7vh, 82px) 0 28px; display: flex; flex-direction: column; animation: step-in 180ms ease both; }
+.step-copy { margin-bottom: 30px; text-align: center; }
+.step-copy h1 { font-size: clamp(2.35rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -.055em; }
+.step-copy > p:last-child { margin-top: 12px; color: var(--muted); font-size: 1rem; }
+.selected-template { margin-bottom: 12px; color: var(--muted); font-size: .82rem; }
+.selected-template strong { color: var(--cyan); }
+
+.choice-grid { display: grid; gap: 18px; }
+.template-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.asset-grid { width: min(980px, 100%); margin: 0 auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.choice-card { min-width: 0; min-height: 224px; padding: 24px; position: relative; display: grid; align-content: center; justify-items: start; gap: 12px; color: var(--text); background: var(--surface); border: 2px solid transparent; border-radius: var(--radius); text-align: left; transition: transform 140ms ease, border-color 140ms ease, background 140ms ease; }
+.choice-card:hover { transform: translateY(-3px); border-color: #40506f; background: #182135; }
+.choice-card:active { transform: translateY(0) scale(.99); }
+.choice-card[aria-pressed="true"] { border-color: var(--cyan); background: #162636; }
+.choice-card > strong { font-size: 1.05rem; }
+.choice-card > small { color: var(--muted); font-size: .82rem; line-height: 1.5; }
+.choice-card > i { width: 28px; aspect-ratio: 1; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; color: #071312; background: var(--cyan); border-radius: 50%; font-size: .8rem; font-style: normal; font-weight: 900; opacity: 0; transform: scale(.7); transition: opacity 140ms ease, transform 140ms ease; }
+.choice-card[aria-pressed="true"] > i { opacity: 1; transform: scale(1); }
+.choice-icon { width: 48px; aspect-ratio: 1; display: grid; place-items: center; color: var(--cyan); background: #202c43; border-radius: 12px; font-size: 1.3rem; }
+.asset-card { min-height: 150px; grid-template-columns: 52px minmax(0, 1fr); align-items: center; align-content: center; gap: 6px 14px; }
+.asset-card .choice-icon { grid-row: 1 / 3; }
+.asset-card > strong, .asset-card > small { grid-column: 2; }
+.asset-card:nth-child(even)[aria-pressed="true"] { border-color: var(--pink); background: #291d35; }
+.asset-card:nth-child(even)[aria-pressed="true"] > i { color: white; background: var(--pink); }
+.asset-card:nth-child(even) .choice-icon { color: var(--pink); }
+
+.formula-preview { width: min(980px, 100%); margin: 22px auto 0; color: var(--muted); font-size: .82rem; text-align: center; overflow-wrap: anywhere; }
+.formula-preview.is-ready { color: #d9e0ec; }
+
+.wizard-actions { margin-top: auto; padding-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.single-action { justify-content: flex-end; }
+.button { min-height: 50px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; border: 1px solid var(--line); border-radius: 12px; font-weight: 800; transition: transform 130ms ease, background 130ms ease, border-color 130ms ease; }
+.button:active:not(:disabled) { transform: translateY(1px); }
+.button-primary { color: #061412; background: var(--cyan); border-color: var(--cyan); }
+.button-primary:hover:not(:disabled) { background: #75eee2; }
+.button-primary:disabled { color: #69758d; background: #171f31; border-color: #283249; cursor: not-allowed; }
+.button-secondary { color: var(--text); background: var(--surface); }
+.button-secondary:hover { border-color: var(--cyan); background: #182537; }
+
+.run-step { min-height: calc(100vh - 64px); padding: 20px 0 28px; animation: step-in 180ms ease both; }
+.run-toolbar { min-height: 58px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.system-stamp { display: grid; gap: 2px; color: var(--muted); font-size: .68rem; letter-spacing: .09em; }
+.system-stamp strong { color: var(--cyan); font-size: .82rem; }
+.run-actions { display: flex; gap: 10px; }
+.run-actions .button { min-height: 44px; padding-inline: 16px; font-size: .82rem; }
+
+.game-frame { --game-accent: var(--cyan); min-height: calc(100vh - 158px); overflow: hidden; background: var(--surface); border-radius: 20px; }
+.game-frame[data-mechanic="tetris"] { --game-accent: #b690ff; }
+.game-frame[data-mechanic="pacman"] { --game-accent: #62dfa6; }
+.event-header { min-height: 104px; padding: 18px 22px; display: grid; grid-template-columns: 58px minmax(0, 1fr) auto; align-items: center; gap: 18px; background: #1a2438; }
+.event-mark { width: 56px; aspect-ratio: 1; display: grid; place-items: center; color: #071413; background: var(--game-accent); border-radius: 16px; font-size: 1.35rem; }
+.event-header h1 { font-size: clamp(1.7rem, 3.3vw, 3rem); line-height: 1; letter-spacing: -.045em; text-transform: uppercase; }
+.game-frame:not(.has-character) .event-header { grid-template-columns: 58px minmax(0, 1fr); }
+.character-module { min-width: 190px; padding: 9px 12px; display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 10px; background: #232036; border-radius: 14px; }
+.abstract-portrait { width: 46px; aspect-ratio: 1; position: relative; overflow: hidden; background: var(--pink); border-radius: 50%; }
+.abstract-portrait i { width: 21px; aspect-ratio: 1; position: absolute; left: 13px; top: 6px; background: #ffd7c9; border-radius: 50%; }
+.abstract-portrait b { width: 33px; height: 22px; position: absolute; left: 7px; bottom: -3px; background: #563c88; border-radius: 50% 50% 0 0; }
+.character-module strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.story-module { padding: 13px 22px; display: flex; align-items: baseline; gap: 12px; background: #251c32; border-top: 1px solid #392746; }
+.story-module strong { color: var(--pink); white-space: nowrap; }
+.story-module p { color: #d6cfdf; font-size: .88rem; }
+
+.game-body { padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; }
+.core-game { min-width: 0; overflow: hidden; background: #101728; border-radius: var(--radius); }
+.core-stage { min-height: 520px; }
+.packaging-panel { min-width: 0; display: grid; align-content: start; gap: 12px; }
+.package-module { min-width: 0; padding: 16px; background: var(--surface-2); border-radius: 14px; }
+.currency-module { display: flex; align-items: center; gap: 14px; }
+.module-icon { width: 38px; aspect-ratio: 1; display: grid; place-items: center; color: #071413; background: var(--game-accent); border-radius: 11px; }
+.currency-module > div { min-width: 0; display: grid; }
+.currency-module strong { color: var(--game-accent); font-size: 1.35rem; }
+.currency-module small, .gacha-module small { color: var(--muted); font-size: .72rem; }
+.mission-module p { margin-top: 6px; color: var(--muted); font-size: .82rem; }
+.mission-module > small { display: block; margin-top: 7px; color: var(--game-accent); text-align: right; }
+.progress-bar { height: 8px; margin-top: 12px; overflow: hidden; background: #0d1424; border-radius: 99px; }
+.progress-bar i { width: 0; height: 100%; display: block; background: var(--game-accent); transition: width 160ms ease; }
+.reward-row { margin-top: 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.reward-item { padding: 10px 4px; display: grid; place-items: center; gap: 4px; color: var(--game-accent); background: #101728; border-radius: 10px; text-align: center; }
+.reward-item small { color: var(--muted); font-size: .68rem; }
+.gacha-module { display: grid; gap: 10px; }
+.draw-button, .core-button { min-height: 42px; padding: 0 14px; color: white; background: #3c2448; border: 1px solid var(--pink); border-radius: 10px; font-weight: 800; transition: background 130ms ease, transform 130ms ease; }
+.draw-button:hover, .core-button:hover:not(:disabled) { background: #57305f; }
+.draw-button:active, .core-button:active:not(:disabled) { transform: translateY(1px); }
+.core-button:disabled { opacity: .38; cursor: not-allowed; }
+
+/* Three fixed layout families; Build & Run selects one internally. */
+.game-frame[data-layout="1"] .game-body { grid-template-columns: 1fr; }
+.game-frame[data-layout="1"] .packaging-panel { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.game-frame[data-layout="1"] .core-stage { min-height: 560px; }
+.game-frame[data-layout="2"] .game-body { grid-template-columns: 300px minmax(0, 1fr); }
+.game-frame[data-layout="2"] .packaging-panel { grid-column: 1; grid-row: 1; }
+.game-frame[data-layout="2"] .core-game { grid-column: 2; grid-row: 1; }
+.game-frame:not(.has-packaging) .game-body { grid-template-columns: 1fr; }
+.game-frame[data-layout="2"]:not(.has-packaging) .core-game { grid-column: 1; grid-row: 1; }
+
+/* Playable classic mechanics */
+.game-hud { min-height: 48px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #dce4ef; background: #182238; font-size: .78rem; font-weight: 800; }
+.move-pad { display: grid; grid-template-columns: repeat(3, 42px); gap: 5px; }
+.move-pad .core-button { min-height: 40px; padding: 0; }
+.move-pad .up { grid-column: 2; }.move-pad .left { grid-column: 1; grid-row: 2; }.move-pad .down { grid-column: 2; grid-row: 2; }.move-pad .right { grid-column: 3; grid-row: 2; }
+.game-status { color: var(--muted); font-size: .82rem; }
+
+/* Minesweeper */
+.minesweeper-game { min-height: 520px; padding: 16px; display: grid; grid-template-rows: auto 1fr auto; gap: 16px; background: #101a2d; }
+.mine-board { width: min(500px, 100%); aspect-ratio: 1; padding: 10px; place-self: center; display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; background: #0c1424; border-radius: 16px; }
+.mine-cell { min-width: 0; padding: 0; color: #dce9f5; background: #26344d; border: 1px solid #34445f; border-radius: 7px; font-size: clamp(.65rem, 2vw, 1rem); font-weight: 900; transition: background 100ms ease, transform 100ms ease; }
+.mine-cell:hover:not(:disabled) { background: #314361; transform: scale(.96); }
+.mine-cell.is-revealed { background: #151f31; border-color: #253249; }
+.mine-cell.is-flagged { color: var(--pink); background: #39243c; }
+.mine-cell.is-mine { color: white; background: #a63b70; }
+.mine-count-1 { color: #62dce0; }.mine-count-2 { color: #73dfa1; }.mine-count-3 { color: #ff718e; }.mine-count-4, .mine-count-5, .mine-count-6, .mine-count-7, .mine-count-8 { color: #c49aff; }
+.minesweeper-game > .game-status { min-height: 24px; text-align: center; }
+
+/* Tetris */
+.tetris-game { min-height: 520px; padding: 16px; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; background: #151429; }
+.tetris-playfield { min-width: 0; display: grid; grid-template-columns: minmax(220px, 310px) 170px; align-items: center; justify-content: center; gap: 18px; }
+.tetris-board { width: min(310px, 100%); aspect-ratio: 1 / 2; padding: 6px; display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(20, 1fr); gap: 2px; background: #0b1020; border-radius: 12px; }
+.tetris-cell { min-width: 0; min-height: 0; background: #182137; border-radius: 2px; }
+.tetris-cell[class*="block-"] { border: 1px solid rgba(255,255,255,.18); }
+.block-1 { background: #48dcd4; }.block-2 { background: #f3ca5b; }.block-3 { background: #b690ff; }.block-4 { background: #ff9e68; }.block-5 { background: #6e9cff; }.block-6 { background: #62dfa6; }.block-7 { background: #f052a7; }
+.tetris-cell.is-active { outline: 1px solid rgba(255,255,255,.55); outline-offset: -2px; }
+.tetris-info { min-width: 0; display: grid; gap: 8px; }
+.tetris-info strong { color: var(--game-accent); font-size: 2.6rem; line-height: 1; }
+.tetris-info > span { color: var(--muted); font-size: .68rem; font-weight: 800; }
+.tetris-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; }
+
+/* Pac-Man style maze with original geometric pieces */
+.pacman-game { min-height: 520px; padding: 16px; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; background: #10221e; }
+.maze-board { width: min(720px, 100%); aspect-ratio: 17 / 13; padding: 7px; place-self: center; display: grid; grid-template-columns: repeat(var(--maze-columns), 1fr); grid-template-rows: repeat(13, 1fr); gap: 2px; background: #0b1517; border-radius: 14px; }
+.maze-cell { min-width: 0; min-height: 0; position: relative; display: grid; place-items: center; background: #142724; }
+.maze-cell.is-wall { background: #315249; border-radius: 3px; }
+.maze-dot { width: 22%; aspect-ratio: 1; background: #f3ca5b; border-radius: 50%; }
+.maze-player { width: 66%; aspect-ratio: 1; z-index: 2; background: var(--cyan); border: 3px solid #9bf8ee; border-radius: 8px; transform: rotate(45deg); }
+.maze-enemy { width: 66%; height: 72%; z-index: 3; background: var(--pink); border-radius: 50% 50% 16% 16%; }
+.maze-enemy::after { content: ""; width: 18%; aspect-ratio: 1; position: absolute; left: 22%; top: 27%; background: white; border-radius: 50%; box-shadow: 13px 0 0 white; }
+.maze-controls { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
+
+/* Asset selections reskin the game without changing its rules. */
+.game-frame.asset-character .maze-player { background: var(--pink); border-color: #ffb9dc; border-radius: 50%; }
+.game-frame.asset-character .mine-cell.is-flagged { color: #ffd4e8; }
+.game-frame.asset-character .tetris-cell.is-active { border-radius: 50%; }
+.game-frame.asset-story .mine-board, .game-frame.asset-story .tetris-board, .game-frame.asset-story .maze-board { background: #17142a; }
+.game-frame.asset-currency .mine-board, .game-frame.asset-currency .tetris-board, .game-frame.asset-currency .maze-board { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.game-frame.asset-missions .game-hud { box-shadow: inset 0 -3px 0 var(--pink); }
+.game-frame.asset-rewards .maze-dot { background: #fff0a3; box-shadow: 0 0 0 2px rgba(243,202,91,.24); }
+.game-frame.asset-rewards .mine-cell.is-revealed { border-color: #536685; }
+.game-frame.asset-rewards .tetris-cell[class*="block-"] { border-color: rgba(255,255,255,.48); }
+.game-frame.asset-gacha .mine-board, .game-frame.asset-gacha .tetris-board, .game-frame.asset-gacha .maze-board { box-shadow: 8px 8px 0 rgba(240,82,167,.22); }
+
+.toast { min-height: 38px; max-width: min(420px, calc(100% - 24px)); padding: 8px 13px; position: fixed; right: 16px; bottom: 16px; z-index: 20; color: #071312; background: var(--cyan); border-radius: 10px; font-size: .8rem; font-weight: 800; opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity 130ms ease, transform 130ms ease; }
+.toast.is-visible { opacity: 1; transform: none; }
+.noscript { margin: 20px; color: var(--pink); }
+
+@keyframes step-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+@media (max-width: 980px) {
+  .template-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .template-grid .choice-card:last-child:nth-child(odd) { width: calc(50% - 9px); grid-column: 1 / -1; justify-self: center; }
+  .game-body, .game-frame[data-layout="2"] .game-body { grid-template-columns: 1fr; }
+  .game-frame[data-layout="2"] .packaging-panel, .game-frame[data-layout="2"] .core-game { grid-column: auto; grid-row: auto; }
+  .packaging-panel { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .core-stage { min-height: 480px; }
+}
+
+@media (max-width: 720px) {
+  .progress-track { width: calc(100% - 18px); }
+  .progress-track li { font-size: .64rem; }
+  .app-shell { width: min(100% - 20px, 1240px); }
+  .wizard-step { padding-top: 34px; }
+  .step-copy h1 { font-size: 2.35rem; }
+  .asset-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .run-toolbar { align-items: stretch; flex-direction: column; }
+  .run-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .event-header { grid-template-columns: 48px minmax(0, 1fr); }
+  .game-frame:not(.has-character) .event-header { grid-template-columns: 48px minmax(0, 1fr); }
+  .event-mark { width: 48px; }
+  .character-module { grid-column: 1 / -1; }
+  .story-module { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .game-body { padding: 10px; }
+  .tetris-playfield { grid-template-columns: minmax(210px, 290px); }
+  .tetris-info { grid-template-columns: auto 1fr; align-items: center; }
+  .tetris-info .game-status { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .progress-header { height: 56px; }
+  .progress-track li { gap: 4px; letter-spacing: .03em; }
+  .app-shell { min-height: calc(100vh - 56px); }
+  .wizard-step { min-height: calc(100vh - 56px); }
+  .template-grid, .asset-grid { grid-template-columns: 1fr; }
+  .template-grid .choice-card:last-child:nth-child(odd) { width: 100%; grid-column: auto; }
+  .choice-card { min-height: 150px; }
+  .asset-card { min-height: 132px; }
+  .wizard-actions { align-items: stretch; flex-direction: column-reverse; }
+  .single-action { flex-direction: column; }
+  .wizard-actions .button { width: 100%; }
+  .run-actions { grid-template-columns: 1fr; }
+  .event-header { padding: 14px; }
+  .event-header h1 { font-size: 1.7rem; }
+  .event-mark { display: none; }
+  .event-header, .game-frame:not(.has-character) .event-header { grid-template-columns: 1fr; }
+  .character-module { grid-column: auto; min-width: 0; }
+  .packaging-panel, .game-frame[data-layout="1"] .packaging-panel { grid-template-columns: 1fr; }
+  .core-stage, .game-frame[data-layout="1"] .core-stage { min-height: 440px; }
+  .game-hud { padding-inline: 10px; font-size: .65rem; }
+  .minesweeper-game, .tetris-game, .pacman-game { min-height: 440px; padding: 10px; }
+  .mine-board { gap: 3px; padding: 6px; }
+  .tetris-controls .core-button { min-width: 44px; padding-inline: 10px; }
+  .maze-controls { grid-template-columns: 1fr; }
+  .maze-controls .move-pad { justify-self: center; }
+}
