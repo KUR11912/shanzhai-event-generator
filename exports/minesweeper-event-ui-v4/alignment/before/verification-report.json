@@ -1,0 +1,824 @@
+{
+  "version": "packaging-factory-v3",
+  "url": "http://127.0.0.1:4173/",
+  "viewport": {
+    "width": 1920,
+    "height": 1080,
+    "deviceScaleFactor": 1
+  },
+  "representatives": [
+    {
+      "layout": 0,
+      "layoutName": "sidebar-right",
+      "assets": {
+        "visualSkin": "fantasy",
+        "characterPackage": "animeHero",
+        "eventStory": "worldCrisis",
+        "rewardSystem": "eventCurrency",
+        "monetizationLayer": "gachaBanner"
+      },
+      "prototypeScreenshot": "screenshots/sidebar-right-prototype.png",
+      "artScreenshot": "screenshots/sidebar-right-art.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 1318,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 1318,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 1318,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 1318,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 1318,
+            "y": 563.609375,
+            "width": 250,
+            "height": 85.5
+          },
+          {
+            "x": 1318,
+            "y": 657.109375,
+            "width": 250,
+            "height": 100.109375
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 1318,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 1318,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 1318,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 1318,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 1318,
+            "y": 563.609375,
+            "width": 250,
+            "height": 85.5
+          },
+          {
+            "x": 1318,
+            "y": 657.109375,
+            "width": 250,
+            "height": 100.109375
+          }
+        ]
+      }
+    },
+    {
+      "layout": 1,
+      "layoutName": "bottom-cards",
+      "assets": {
+        "visualSkin": "military",
+        "characterPackage": "cuteMascot",
+        "eventStory": "summerFestival",
+        "rewardSystem": "limitedRewards",
+        "monetizationLayer": "battlePass"
+      },
+      "prototypeScreenshot": "screenshots/bottom-cards-prototype.png",
+      "artScreenshot": "screenshots/bottom-cards-art.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "board": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "packaging": {
+          "x": 352,
+          "y": 735.375,
+          "width": 1216,
+          "height": 123.1875
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 596.796875,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 841.59375,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1086.390625,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1331.1875,
+            "y": 735.375,
+            "width": 236.8125,
+            "height": 123.1875
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "board": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "packaging": {
+          "x": 352,
+          "y": 735.375,
+          "width": 1216,
+          "height": 123.1875
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 596.796875,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 841.59375,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1086.390625,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1331.1875,
+            "y": 735.375,
+            "width": 236.8125,
+            "height": 123.1875
+          }
+        ]
+      }
+    },
+    {
+      "layout": 2,
+      "layoutName": "sidebar-left",
+      "assets": {
+        "visualSkin": "cyber",
+        "characterPackage": "tacticalOperator",
+        "eventStory": "limitedTournament",
+        "rewardSystem": "dailyMissions",
+        "monetizationLayer": "countdownOffer"
+      },
+      "prototypeScreenshot": "screenshots/sidebar-left-prototype.png",
+      "artScreenshot": "screenshots/sidebar-left-art.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 630,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 352,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 352,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 352,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 352,
+            "y": 563.609375,
+            "width": 250,
+            "height": 117.96875
+          },
+          {
+            "x": 352,
+            "y": 689.578125,
+            "width": 250,
+            "height": 99.546875
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 630,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "boardShell": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 352,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 352,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 352,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 352,
+            "y": 563.609375,
+            "width": 250,
+            "height": 117.96875
+          },
+          {
+            "x": 352,
+            "y": 689.578125,
+            "width": 250,
+            "height": 99.546875
+          }
+        ]
+      }
+    }
+  ],
+  "combinationAudit": {
+    "groupCount": 5,
+    "combinationCount": 1023,
+    "failureCount": 0,
+    "failures": [],
+    "errors": []
+  },
+  "responsiveAudit": [
+    {
+      "viewport": "1920x1080",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 581,
+      "packagingClientHeight": 581,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1920x1080",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 123,
+      "packagingClientHeight": 123,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1920x1080",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 581,
+      "packagingClientHeight": 581,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 544,
+      "packagingClientHeight": 544,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 123,
+      "packagingClientHeight": 123,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 544,
+      "packagingClientHeight": 544,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 420,
+      "packagingClientHeight": 420,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 94,
+      "packagingClientHeight": 94,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 420,
+      "packagingClientHeight": 420,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 462,
+      "packagingClientHeight": 462,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1256,
+      "viewportHeight": 844,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 511,
+      "packagingClientHeight": 511,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1305,
+      "viewportHeight": 844,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 494,
+      "packagingClientHeight": 494,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1288,
+      "viewportHeight": 844,
+      "errors": []
+    }
+  ]
+}

@@ -6,7 +6,8 @@
     <meta name="description" content="A three-step classroom prototype about formulaic game-event production." />
     <title>Shanzhai Game Factory</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1020'/%3E%3Cpath d='M13 22h22l-8 9h24L30 52l7-14H13z' fill='%233de5d4'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="style.css?v=18" />
+    <link rel="stylesheet" href="style.css?v=20" />
+    <link rel="stylesheet" href="scene-ui.css?v=1" />
   </head>
   <body>
     <header class="progress-header" aria-label="Production progress">
@@ -52,7 +53,7 @@
 
         <div class="choice-grid asset-grid" id="asset-grid" aria-label="Packaging modules"></div>
 
-        <p class="formula-preview" id="formula-preview" aria-live="polite">Choose at least one packaging module.</p>
+        <p class="formula-preview" id="formula-preview" aria-live="polite">Choose any packaging modules, or play the original core.</p>
         <div class="production-process" id="production-process" aria-live="polite" hidden>
           <span id="production-status">Extracting proven mechanic…</span>
           <div class="production-bar" aria-hidden="true"><i id="production-bar"></i></div>
@@ -74,13 +75,18 @@
           <div class="run-actions">
             <button class="button button-secondary" id="back-to-builder" type="button"><span aria-hidden="true">←</span> Back to Builder</button>
             <button class="button button-primary" id="reveal-mechanic" type="button">Convert to Event Version</button>
-            <span class="skin-action"><button class="button button-secondary" id="another-skin" type="button">Generate Another Skin</button><small>Same mechanic. New product.</small></span>
+            <span class="skin-action"><button class="button button-secondary" id="another-skin" type="button">Edit Packaging</button><small>Same mechanic. Your choices.</small></span>
             <button class="button button-secondary" id="restart-game" type="button">Restart Game <span aria-hidden="true">↻</span></button>
           </div>
         </header>
 
-        <article class="game-frame event-stage" id="game-frame" data-mechanic="minesweeper" data-layout="0" data-mode="core">
-          <img class="event-shell-background" id="event-shell-background" src="assets/event-ui/processed/event-shell.png" alt="" aria-hidden="true" />
+        <div class="scene-viewport" tabindex="0" aria-label="Game scene">
+        <article class="game-frame event-stage" id="game-frame" data-mechanic="minesweeper" data-layout="fixed" data-mode="core">
+          <img class="event-shell-background" id="event-shell-background" alt="" aria-hidden="true" hidden />
+          <img class="scene-layer scene-wood" id="scene-wood" alt="" aria-hidden="true" hidden />
+          <img class="scene-layer scene-character" id="scene-character" alt="Festival host" hidden />
+          <img class="scene-layer scene-rewards" id="scene-rewards" alt="Festival rewards" hidden />
+          <section class="scene-story" id="scene-story" aria-label="Event Story" hidden><p id="scene-story-copy"></p></section>
           <header class="event-header">
             <div class="event-mark" id="event-mark" aria-hidden="true">✦</div>
             <h1 id="event-title">Neon Bloom Protocol</h1>
@@ -89,20 +95,22 @@
 
           <div class="game-body">
             <section class="core-game" aria-label="Playable core mechanic"><div class="core-stage" id="game-stage"></div></section>
-            <section class="packaging-panel" id="packaging-panel" aria-label="Selected packaging modules"></section>
           </div>
           <div class="mode-conversion" id="mode-conversion" hidden aria-live="polite">
             <strong id="mode-conversion-status">Preserving core mechanic…</strong>
             <div class="mode-conversion-bar" aria-hidden="true"><i id="mode-conversion-bar"></i></div>
           </div>
         </article>
+        </div>
+        <p class="scene-scroll-hint">Swipe or scroll horizontally to explore the full scene.</p>
         <p class="production-data"><span>Core Mechanic Reused: <b>100%</b></span><span>Visual Packaging Replaced: <b>92%</b></span><span>Original Gameplay Added: <b>3%</b></span><span>Market Readiness: <b>98%</b></span><small>Fictional production data for artistic commentary.</small></p>
       </section>
     </main>
 
     <output class="toast" id="toast" aria-live="polite"></output>
     <noscript><p class="noscript">This prototype requires JavaScript.</p></noscript>
-    <script src="assets/event-ui/event-ui-assets.js?v=4"></script>
-    <script src="script.js?v=18"></script>
+    <script src="assets/event-ui/event-ui-assets.js?v=6"></script>
+    <script src="scene-ui.js?v=1"></script>
+    <script src="script.js?v=19"></script>
   </body>
 </html>

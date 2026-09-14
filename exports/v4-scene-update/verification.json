@@ -1,0 +1,2883 @@
+{
+  "results": [
+    {
+      "game": "minesweeper",
+      "mask": 15,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 0,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 1,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 2,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 3,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 4,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 5,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 6,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 7,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 8,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 9,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 10,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 11,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 12,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "mask": 13,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 612.796875,
+          "y": 392.28125,
+          "width": 830.796875,
+          "height": 390.796875
+        },
+        "board": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 329.953125,
+          "height": 329.953125
+        },
+        "hud": {
+          "x": 1317.125,
+          "y": 406.390625,
+          "width": 112.359375,
+          "height": 362.578125
+        },
+        "cell": {
+          "x": 799.015625,
+          "y": 406.390625,
+          "width": 35.765625,
+          "height": 35.765625
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/flag.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/clock.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/open.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/minesweeper/closed.png"
+      ]
+    },
+    {
+      "game": "minesweeper",
+      "mask": 14,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 737.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 747.71875,
+          "y": 368,
+          "width": 43.609375,
+          "height": 43.609375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 15,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 0,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 1,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 2,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 3,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 4,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 5,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 6,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 7,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 8,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 9,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 10,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 11,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 12,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "pacman",
+      "mask": 13,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 588,
+          "y": 395.78125,
+          "width": 874.1875,
+          "height": 373.34375
+        },
+        "board": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 403.6875,
+          "height": 308.703125
+        },
+        "hud": {
+          "x": 1339.8125,
+          "y": 395.78125,
+          "width": 122.375,
+          "height": 373.34375
+        },
+        "cell": {
+          "x": 748.953125,
+          "y": 403.84375,
+          "width": 23.734375,
+          "height": 23.734375
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/hud.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/player.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/wall.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/floor.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/collectible.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/maze/enemy.png"
+      ]
+    },
+    {
+      "game": "pacman",
+      "mask": 14,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 706.59375,
+          "y": 356,
+          "width": 506.8125,
+          "height": 387.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 713.59375,
+          "y": 363,
+          "width": 27.09375,
+          "height": 26.875
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 15,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 0,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 1,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 2,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 3,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 4,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 5,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 6,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 7,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 8,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 9,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 10,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 11,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/character.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 12,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "tetris",
+      "mask": 13,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 697.859375
+        },
+        "game": {
+          "x": 682.234375,
+          "y": 378.328125,
+          "width": 570.390625,
+          "height": 453.59375
+        },
+        "board": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 187.609375,
+          "height": 375.234375
+        },
+        "hud": {
+          "x": 1115.734375,
+          "y": 573.359375,
+          "width": 136.890625,
+          "height": 195.09375
+        },
+        "cell": {
+          "x": 867.921875,
+          "y": 385.765625,
+          "width": 18.75,
+          "height": 18.75
+        },
+        "story": {
+          "x": 766.546875,
+          "y": 217.125,
+          "width": 641.078125,
+          "height": 140.953125
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": [
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/background.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/stage.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/rewards.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/common/dialog.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/panel.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/restart.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/hold.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-1.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/frame.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-2.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/ghost.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/next.png",
+        "http://127.0.0.1:4173/assets/event-ui/processed/scene/tetris/block-4.png"
+      ]
+    },
+    {
+      "game": "tetris",
+      "mask": 14,
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 580.5625
+        },
+        "board": {
+          "x": 856.28125,
+          "y": 350,
+          "width": 207.4375,
+          "height": 414.875
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "cell": {
+          "x": 862.28125,
+          "y": 356,
+          "width": 17.734375,
+          "height": 18.234375
+        },
+        "story": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      },
+      "pngRequests": []
+    },
+    {
+      "game": "minesweeper",
+      "viewport": {
+        "width": 960,
+        "height": 720
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 42.90625,
+          "y": 174,
+          "width": 874.1875,
+          "height": 491.984375
+        },
+        "game": {
+          "x": 235.21875,
+          "y": 336.34375,
+          "width": 585.703125,
+          "height": 275.5
+        },
+        "board": {
+          "x": 366.515625,
+          "y": 346.296875,
+          "width": 232.59375,
+          "height": 232.59375
+        },
+        "hud": {
+          "x": 731.765625,
+          "y": 346.296875,
+          "width": 79.203125,
+          "height": 255.59375
+        },
+        "cell": {
+          "x": 366.515625,
+          "y": 346.296875,
+          "width": 24.953125,
+          "height": 24.953125
+        },
+        "story": {
+          "x": 343.625,
+          "y": 212.859375,
+          "width": 451.953125,
+          "height": 99.375
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "game": "minesweeper",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": -305,
+          "y": 251.0625,
+          "width": 1000,
+          "height": 562.796875
+        },
+        "game": {
+          "x": -85,
+          "y": 436.78125,
+          "width": 670,
+          "height": 315.15625
+        },
+        "board": {
+          "x": 65.171875,
+          "y": 448.15625,
+          "width": 266.109375,
+          "height": 266.109375
+        },
+        "hud": {
+          "x": 483.015625,
+          "y": 448.15625,
+          "width": 90.609375,
+          "height": 292.40625
+        },
+        "cell": {
+          "x": 65.171875,
+          "y": 448.15625,
+          "width": 28.671875,
+          "height": 28.671875
+        },
+        "story": {
+          "x": 39,
+          "y": 295.515625,
+          "width": 517,
+          "height": 113.671875
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "game": "pacman",
+      "viewport": {
+        "width": 960,
+        "height": 720
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 42.90625,
+          "y": 174,
+          "width": 874.1875,
+          "height": 491.984375
+        },
+        "game": {
+          "x": 217.734375,
+          "y": 338.8125,
+          "width": 616.296875,
+          "height": 263.203125
+        },
+        "board": {
+          "x": 331.203125,
+          "y": 344.5,
+          "width": 284.578125,
+          "height": 217.625
+        },
+        "hud": {
+          "x": 747.75,
+          "y": 338.8125,
+          "width": 86.28125,
+          "height": 263.203125
+        },
+        "cell": {
+          "x": 331.203125,
+          "y": 344.5,
+          "width": 16.734375,
+          "height": 16.734375
+        },
+        "story": {
+          "x": 343.625,
+          "y": 212.859375,
+          "width": 451.953125,
+          "height": 99.375
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "game": "pacman",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": -305,
+          "y": 251.0625,
+          "width": 1000,
+          "height": 562.796875
+        },
+        "game": {
+          "x": -105,
+          "y": 439.59375,
+          "width": 705,
+          "height": 301.09375
+        },
+        "board": {
+          "x": 24.8125,
+          "y": 446.09375,
+          "width": 325.546875,
+          "height": 248.953125
+        },
+        "hud": {
+          "x": 501.3125,
+          "y": 439.59375,
+          "width": 98.6875,
+          "height": 301.09375
+        },
+        "cell": {
+          "x": 24.8125,
+          "y": 446.09375,
+          "width": 19.140625,
+          "height": 19.140625
+        },
+        "story": {
+          "x": 39,
+          "y": 295.515625,
+          "width": 517,
+          "height": 113.671875
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "game": "tetris",
+      "viewport": {
+        "width": 960,
+        "height": 720
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": 42.90625,
+          "y": 174,
+          "width": 874.1875,
+          "height": 491.984375
+        },
+        "game": {
+          "x": 284.171875,
+          "y": 326.5,
+          "width": 402.125,
+          "height": 319.78125
+        },
+        "board": {
+          "x": 415.078125,
+          "y": 331.75,
+          "width": 132.265625,
+          "height": 264.53125
+        },
+        "hud": {
+          "x": 589.796875,
+          "y": 464,
+          "width": 96.5,
+          "height": 137.53125
+        },
+        "cell": {
+          "x": 415.078125,
+          "y": 331.75,
+          "width": 13.21875,
+          "height": 13.21875
+        },
+        "story": {
+          "x": 343.625,
+          "y": 212.859375,
+          "width": 451.953125,
+          "height": 99.375
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "game": "tetris",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true,
+      "metrics": {
+        "scene": {
+          "x": -305,
+          "y": 251.0625,
+          "width": 1000,
+          "height": 562.796875
+        },
+        "game": {
+          "x": -29,
+          "y": 425.515625,
+          "width": 460,
+          "height": 365.8125
+        },
+        "board": {
+          "x": 120.734375,
+          "y": 431.515625,
+          "width": 151.3125,
+          "height": 302.625
+        },
+        "hud": {
+          "x": 320.609375,
+          "y": 582.796875,
+          "width": 110.390625,
+          "height": 157.34375
+        },
+        "cell": {
+          "x": 120.734375,
+          "y": 431.515625,
+          "width": 15.125,
+          "height": 15.125
+        },
+        "story": {
+          "x": 39,
+          "y": 295.515625,
+          "width": 517,
+          "height": 113.671875
+        },
+        "storyOverflow": 0,
+        "hudOverflow": 0,
+        "pageOverflow": 0
+      }
+    },
+    {
+      "test": "migration-and-builder-roundtrip",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "minesweeper-all-on.png",
+    "minesweeper-no-rewards.png",
+    "minesweeper-no-story.png",
+    "minesweeper-no-character.png",
+    "minesweeper-visual-off.png",
+    "pacman-all-on.png",
+    "pacman-no-rewards.png",
+    "pacman-no-story.png",
+    "pacman-no-character.png",
+    "pacman-visual-off.png",
+    "tetris-all-on.png",
+    "tetris-no-rewards.png",
+    "tetris-no-story.png",
+    "tetris-no-character.png",
+    "tetris-visual-off.png",
+    "minesweeper-960px.png",
+    "minesweeper-390px.png",
+    "pacman-960px.png",
+    "pacman-390px.png",
+    "tetris-960px.png",
+    "tetris-390px.png",
+    "packaging-four-switches.png"
+  ]
+}

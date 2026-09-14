@@ -1,0 +1,1952 @@
+{
+  "version": "minesweeper-event-ui-v4 (based on packaging-factory-v3)",
+  "url": "http://127.0.0.1:4173/",
+  "viewport": {
+    "width": 1920,
+    "height": 1080,
+    "deviceScaleFactor": 1
+  },
+  "representatives": [
+    {
+      "layout": 0,
+      "layoutName": "sidebar-right",
+      "assets": {
+        "visualSkin": "fantasy",
+        "characterPackage": "animeHero",
+        "eventStory": "worldCrisis",
+        "rewardSystem": "eventCurrency",
+        "monetizationLayer": "gachaBanner"
+      },
+      "prototypeScreenshot": "screenshots/sidebar-right-prototype.png",
+      "eventScreenshot": "screenshots/sidebar-right-event.png",
+      "debugScreenshot": "screenshots/sidebar-right-debug.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "visualLayerChecks": {
+        "backgroundSource": "assets/event-ui/processed/common/background.png",
+        "backgroundObjectFit": "cover",
+        "headerArtInset": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px",
+          "pointerEvents": "none"
+        },
+        "panelArtPointerEvents": "none",
+        "mineCellBackgroundSizes": [
+          "100% 100%",
+          "auto 74%, 100% 100%"
+        ],
+        "mineCellsSquare": true,
+        "mineCellsSameSize": true,
+        "textOverflow": [
+          {
+            "selector": "#event-title",
+            "clientWidth": 1120,
+            "clientHeight": 56,
+            "scrollWidth": 1120,
+            "scrollHeight": 57,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#event-dialogue",
+            "clientWidth": 1120,
+            "clientHeight": 17,
+            "scrollWidth": 1120,
+            "scrollHeight": 18,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": ".game-status",
+            "clientWidth": 922,
+            "clientHeight": 24,
+            "scrollWidth": 922,
+            "scrollHeight": 24,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(1)",
+            "clientWidth": 250,
+            "clientHeight": 61,
+            "scrollWidth": 250,
+            "scrollHeight": 61,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(2)",
+            "clientWidth": 250,
+            "clientHeight": 77,
+            "scrollWidth": 250,
+            "scrollHeight": 77,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(3)",
+            "clientWidth": 250,
+            "clientHeight": 123,
+            "scrollWidth": 250,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(4)",
+            "clientWidth": 250,
+            "clientHeight": 86,
+            "scrollWidth": 250,
+            "scrollHeight": 86,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(5)",
+            "clientWidth": 250,
+            "clientHeight": 97,
+            "scrollWidth": 250,
+            "scrollHeight": 97,
+            "horizontal": false,
+            "vertical": false
+          }
+        ],
+        "domCounts": {
+          "frames": 1,
+          "gameStages": 1,
+          "boards": 1,
+          "huds": 1,
+          "packagingPanels": 1
+        }
+      },
+      "assetBounds": {
+        "commonBackground": {
+          "source": "assets/event-ui/processed/common/background.png",
+          "width": 1672,
+          "height": 941,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1672,
+            "height": 941
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonDialog": {
+          "source": "assets/event-ui/processed/common/dialog-panel.png",
+          "width": 867,
+          "height": 191,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 867,
+            "height": 191
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonCircle": {
+          "source": "assets/event-ui/processed/common/circular-button.png",
+          "width": 95,
+          "height": 95,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 95,
+            "height": 95
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonHud": {
+          "source": "assets/event-ui/processed/common/wood-panel.png",
+          "width": 307,
+          "height": 93,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 306,
+            "height": 93
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 1,
+            "bottom": 0
+          }
+        },
+        "commonPanel": {
+          "source": "assets/event-ui/processed/common/panel.png",
+          "width": 986,
+          "height": 484,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 986,
+            "height": 483
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 1
+          }
+        },
+        "gamePanel": {
+          "source": "assets/event-ui/processed/minesweeper/game-panel.png",
+          "width": 610,
+          "height": 348,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 607,
+            "height": 346
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "cellClosed": {
+          "source": "assets/event-ui/processed/minesweeper/cell-closed.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 2,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 2,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "cellOpen": {
+          "source": "assets/event-ui/processed/minesweeper/cell-open.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number1": {
+          "source": "assets/event-ui/processed/minesweeper/number-1.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "number2": {
+          "source": "assets/event-ui/processed/minesweeper/number-2.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number3": {
+          "source": "assets/event-ui/processed/minesweeper/number-3.png",
+          "width": 128,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number4": {
+          "source": "assets/event-ui/processed/minesweeper/number-4.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "mine": {
+          "source": "assets/event-ui/processed/minesweeper/mine.png",
+          "width": 244,
+          "height": 240,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 242,
+            "height": 238
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "flag": {
+          "source": "assets/event-ui/processed/minesweeper/flag.png",
+          "width": 184,
+          "height": 248,
+          "alphaBounds": {
+            "x": 0,
+            "y": 1,
+            "width": 184,
+            "height": 246
+          },
+          "margins": {
+            "left": 0,
+            "top": 1,
+            "right": 0,
+            "bottom": 1
+          }
+        }
+      },
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "status": {
+          "x": 368,
+          "y": 818.5625,
+          "width": 922,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 1318,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 1318,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 1318,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 1318,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 1318,
+            "y": 563.609375,
+            "width": 250,
+            "height": 85.5
+          },
+          {
+            "x": 1318,
+            "y": 657.109375,
+            "width": 250,
+            "height": 100.109375
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "status": {
+          "x": 368,
+          "y": 818.5625,
+          "width": 922,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 606.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 1318,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 1318,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 1318,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 1318,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 1318,
+            "y": 563.609375,
+            "width": 250,
+            "height": 85.5
+          },
+          {
+            "x": 1318,
+            "y": 657.109375,
+            "width": 250,
+            "height": 100.109375
+          }
+        ]
+      }
+    },
+    {
+      "layout": 1,
+      "layoutName": "bottom-cards",
+      "assets": {
+        "visualSkin": "military",
+        "characterPackage": "cuteMascot",
+        "eventStory": "summerFestival",
+        "rewardSystem": "limitedRewards",
+        "monetizationLayer": "battlePass"
+      },
+      "prototypeScreenshot": "screenshots/bottom-cards-prototype.png",
+      "eventScreenshot": "screenshots/bottom-cards-event.png",
+      "debugScreenshot": "screenshots/bottom-cards-debug.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "visualLayerChecks": {
+        "backgroundSource": "assets/event-ui/processed/common/background.png",
+        "backgroundObjectFit": "cover",
+        "headerArtInset": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px",
+          "pointerEvents": "none"
+        },
+        "panelArtPointerEvents": "none",
+        "mineCellBackgroundSizes": [
+          "100% 100%",
+          "auto 74%, 100% 100%"
+        ],
+        "mineCellsSquare": true,
+        "mineCellsSameSize": true,
+        "textOverflow": [
+          {
+            "selector": "#event-title",
+            "clientWidth": 1120,
+            "clientHeight": 56,
+            "scrollWidth": 1120,
+            "scrollHeight": 57,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#event-dialogue",
+            "clientWidth": 1120,
+            "clientHeight": 17,
+            "scrollWidth": 1120,
+            "scrollHeight": 18,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": ".game-status",
+            "clientWidth": 1184,
+            "clientHeight": 24,
+            "scrollWidth": 1184,
+            "scrollHeight": 24,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(1)",
+            "clientWidth": 237,
+            "clientHeight": 123,
+            "scrollWidth": 237,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(2)",
+            "clientWidth": 237,
+            "clientHeight": 123,
+            "scrollWidth": 237,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(3)",
+            "clientWidth": 237,
+            "clientHeight": 123,
+            "scrollWidth": 237,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(4)",
+            "clientWidth": 237,
+            "clientHeight": 123,
+            "scrollWidth": 237,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(5)",
+            "clientWidth": 237,
+            "clientHeight": 120,
+            "scrollWidth": 237,
+            "scrollHeight": 120,
+            "horizontal": false,
+            "vertical": false
+          }
+        ],
+        "domCounts": {
+          "frames": 1,
+          "gameStages": 1,
+          "boards": 1,
+          "huds": 1,
+          "packagingPanels": 1
+        }
+      },
+      "assetBounds": {
+        "commonBackground": {
+          "source": "assets/event-ui/processed/common/background.png",
+          "width": 1672,
+          "height": 941,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1672,
+            "height": 941
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonDialog": {
+          "source": "assets/event-ui/processed/common/dialog-panel.png",
+          "width": 867,
+          "height": 191,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 867,
+            "height": 191
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonCircle": {
+          "source": "assets/event-ui/processed/common/circular-button.png",
+          "width": 95,
+          "height": 95,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 95,
+            "height": 95
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonHud": {
+          "source": "assets/event-ui/processed/common/wood-panel.png",
+          "width": 307,
+          "height": 93,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 306,
+            "height": 93
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 1,
+            "bottom": 0
+          }
+        },
+        "commonPanel": {
+          "source": "assets/event-ui/processed/common/panel.png",
+          "width": 986,
+          "height": 484,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 986,
+            "height": 483
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 1
+          }
+        },
+        "gamePanel": {
+          "source": "assets/event-ui/processed/minesweeper/game-panel.png",
+          "width": 610,
+          "height": 348,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 607,
+            "height": 346
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "cellClosed": {
+          "source": "assets/event-ui/processed/minesweeper/cell-closed.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 2,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 2,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "cellOpen": {
+          "source": "assets/event-ui/processed/minesweeper/cell-open.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number1": {
+          "source": "assets/event-ui/processed/minesweeper/number-1.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "number2": {
+          "source": "assets/event-ui/processed/minesweeper/number-2.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number3": {
+          "source": "assets/event-ui/processed/minesweeper/number-3.png",
+          "width": 128,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number4": {
+          "source": "assets/event-ui/processed/minesweeper/number-4.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "mine": {
+          "source": "assets/event-ui/processed/minesweeper/mine.png",
+          "width": 244,
+          "height": 240,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 242,
+            "height": 238
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "flag": {
+          "source": "assets/event-ui/processed/minesweeper/flag.png",
+          "width": 184,
+          "height": 248,
+          "alphaBounds": {
+            "x": 0,
+            "y": 1,
+            "width": 184,
+            "height": 246
+          },
+          "margins": {
+            "left": 0,
+            "top": 1,
+            "right": 0,
+            "bottom": 1
+          }
+        }
+      },
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "status": {
+          "x": 368,
+          "y": 683.375,
+          "width": 1184,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "board": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "packaging": {
+          "x": 352,
+          "y": 735.375,
+          "width": 1216,
+          "height": 123.1875
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 596.796875,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 841.59375,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1086.390625,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1331.1875,
+            "y": 735.375,
+            "width": 236.8125,
+            "height": 123.1875
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "stage": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "game": {
+          "x": 352,
+          "y": 278,
+          "width": 1216,
+          "height": 445.375
+        },
+        "hud": {
+          "x": 368,
+          "y": 294,
+          "width": 1184,
+          "height": 48
+        },
+        "status": {
+          "x": 368,
+          "y": 683.375,
+          "width": 1184,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "board": {
+          "x": 805.3125,
+          "y": 358,
+          "width": 309.375,
+          "height": 309.375
+        },
+        "packaging": {
+          "x": 352,
+          "y": 735.375,
+          "width": 1216,
+          "height": 123.1875
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 596.796875,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 841.59375,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1086.390625,
+            "y": 735.375,
+            "width": 236.796875,
+            "height": 123.1875
+          },
+          {
+            "x": 1331.1875,
+            "y": 735.375,
+            "width": 236.8125,
+            "height": 123.1875
+          }
+        ]
+      }
+    },
+    {
+      "layout": 2,
+      "layoutName": "sidebar-left",
+      "assets": {
+        "visualSkin": "cyber",
+        "characterPackage": "tacticalOperator",
+        "eventStory": "limitedTournament",
+        "rewardSystem": "dailyMissions",
+        "monetizationLayer": "countdownOffer"
+      },
+      "prototypeScreenshot": "screenshots/sidebar-left-prototype.png",
+      "eventScreenshot": "screenshots/sidebar-left-event.png",
+      "debugScreenshot": "screenshots/sidebar-left-debug.png",
+      "rectDelta": 0,
+      "statePreservedDuringConversion": true,
+      "preservedReferences": true,
+      "continuedPlaying": true,
+      "statePreservedOnReturn": true,
+      "statePreservedOnRestore": true,
+      "noResourceSheetDisplayed": true,
+      "noHorizontalOverflow": true,
+      "frameFitsViewport": true,
+      "packagingClipped": false,
+      "visualLayerChecks": {
+        "backgroundSource": "assets/event-ui/processed/common/background.png",
+        "backgroundObjectFit": "cover",
+        "headerArtInset": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px",
+          "pointerEvents": "none"
+        },
+        "panelArtPointerEvents": "none",
+        "mineCellBackgroundSizes": [
+          "100% 100%",
+          "auto 74%, 100% 100%"
+        ],
+        "mineCellsSquare": true,
+        "mineCellsSameSize": true,
+        "textOverflow": [
+          {
+            "selector": "#event-title",
+            "clientWidth": 1120,
+            "clientHeight": 56,
+            "scrollWidth": 1120,
+            "scrollHeight": 57,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#event-dialogue",
+            "clientWidth": 1120,
+            "clientHeight": 17,
+            "scrollWidth": 1120,
+            "scrollHeight": 18,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": ".game-status",
+            "clientWidth": 922,
+            "clientHeight": 24,
+            "scrollWidth": 922,
+            "scrollHeight": 24,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(1)",
+            "clientWidth": 250,
+            "clientHeight": 61,
+            "scrollWidth": 250,
+            "scrollHeight": 61,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(2)",
+            "clientWidth": 250,
+            "clientHeight": 77,
+            "scrollWidth": 250,
+            "scrollHeight": 77,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(3)",
+            "clientWidth": 250,
+            "clientHeight": 123,
+            "scrollWidth": 250,
+            "scrollHeight": 123,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(4)",
+            "clientWidth": 250,
+            "clientHeight": 118,
+            "scrollWidth": 250,
+            "scrollHeight": 118,
+            "horizontal": false,
+            "vertical": false
+          },
+          {
+            "selector": "#packaging-panel > .package-module:nth-child(5)",
+            "clientWidth": 250,
+            "clientHeight": 97,
+            "scrollWidth": 250,
+            "scrollHeight": 97,
+            "horizontal": false,
+            "vertical": false
+          }
+        ],
+        "domCounts": {
+          "frames": 1,
+          "gameStages": 1,
+          "boards": 1,
+          "huds": 1,
+          "packagingPanels": 1
+        }
+      },
+      "assetBounds": {
+        "commonBackground": {
+          "source": "assets/event-ui/processed/common/background.png",
+          "width": 1672,
+          "height": 941,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1672,
+            "height": 941
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonDialog": {
+          "source": "assets/event-ui/processed/common/dialog-panel.png",
+          "width": 867,
+          "height": 191,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 867,
+            "height": 191
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonCircle": {
+          "source": "assets/event-ui/processed/common/circular-button.png",
+          "width": 95,
+          "height": 95,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 95,
+            "height": 95
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        "commonHud": {
+          "source": "assets/event-ui/processed/common/wood-panel.png",
+          "width": 307,
+          "height": 93,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 306,
+            "height": 93
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 1,
+            "bottom": 0
+          }
+        },
+        "commonPanel": {
+          "source": "assets/event-ui/processed/common/panel.png",
+          "width": 986,
+          "height": 484,
+          "alphaBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 986,
+            "height": 483
+          },
+          "margins": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 1
+          }
+        },
+        "gamePanel": {
+          "source": "assets/event-ui/processed/minesweeper/game-panel.png",
+          "width": 610,
+          "height": 348,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 607,
+            "height": 346
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "cellClosed": {
+          "source": "assets/event-ui/processed/minesweeper/cell-closed.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 2,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 2,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "cellOpen": {
+          "source": "assets/event-ui/processed/minesweeper/cell-open.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number1": {
+          "source": "assets/event-ui/processed/minesweeper/number-1.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 2,
+            "bottom": 1
+          }
+        },
+        "number2": {
+          "source": "assets/event-ui/processed/minesweeper/number-2.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number3": {
+          "source": "assets/event-ui/processed/minesweeper/number-3.png",
+          "width": 128,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 126,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "number4": {
+          "source": "assets/event-ui/processed/minesweeper/number-4.png",
+          "width": 129,
+          "height": 127,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 127,
+            "height": 125
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "mine": {
+          "source": "assets/event-ui/processed/minesweeper/mine.png",
+          "width": 244,
+          "height": 240,
+          "alphaBounds": {
+            "x": 1,
+            "y": 1,
+            "width": 242,
+            "height": 238
+          },
+          "margins": {
+            "left": 1,
+            "top": 1,
+            "right": 1,
+            "bottom": 1
+          }
+        },
+        "flag": {
+          "source": "assets/event-ui/processed/minesweeper/flag.png",
+          "width": 184,
+          "height": 248,
+          "alphaBounds": {
+            "x": 0,
+            "y": 1,
+            "width": 184,
+            "height": 246
+          },
+          "margins": {
+            "left": 0,
+            "top": 1,
+            "right": 0,
+            "bottom": 1
+          }
+        }
+      },
+      "errors": [],
+      "prototypeRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 630,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "status": {
+          "x": 630,
+          "y": 818.5625,
+          "width": 922,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 352,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 352,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 352,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 352,
+            "y": 563.609375,
+            "width": 250,
+            "height": 117.96875
+          },
+          {
+            "x": 352,
+            "y": 689.578125,
+            "width": 250,
+            "height": 99.546875
+          }
+        ]
+      },
+      "artRects": {
+        "frame": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 708.5625
+        },
+        "header": {
+          "x": 340,
+          "y": 162,
+          "width": 1240,
+          "height": 104
+        },
+        "title": {
+          "x": 438,
+          "y": 175.46875,
+          "width": 1120,
+          "height": 56
+        },
+        "dialogue": {
+          "x": 438,
+          "y": 235.46875,
+          "width": 1120,
+          "height": 17.046875
+        },
+        "body": {
+          "x": 340,
+          "y": 266,
+          "width": 1240,
+          "height": 604.5625
+        },
+        "coreGame": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "stage": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "game": {
+          "x": 614,
+          "y": 278,
+          "width": 954,
+          "height": 580.5625
+        },
+        "hud": {
+          "x": 630,
+          "y": 294,
+          "width": 922,
+          "height": 48
+        },
+        "status": {
+          "x": 630,
+          "y": 818.5625,
+          "width": 922,
+          "height": 24
+        },
+        "boardShell": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "board": {
+          "x": 868.71875,
+          "y": 358,
+          "width": 444.5625,
+          "height": 444.5625
+        },
+        "packaging": {
+          "x": 352,
+          "y": 278,
+          "width": 250,
+          "height": 580.5625
+        },
+        "modules": [
+          {
+            "x": 352,
+            "y": 278,
+            "width": 250,
+            "height": 61.3125
+          },
+          {
+            "x": 352,
+            "y": 347.3125,
+            "width": 250,
+            "height": 77.109375
+          },
+          {
+            "x": 352,
+            "y": 432.421875,
+            "width": 250,
+            "height": 123.1875
+          },
+          {
+            "x": 352,
+            "y": 563.609375,
+            "width": 250,
+            "height": 117.96875
+          },
+          {
+            "x": 352,
+            "y": 689.578125,
+            "width": 250,
+            "height": 99.546875
+          }
+        ]
+      }
+    }
+  ],
+  "combinationAudit": {
+    "groupCount": 5,
+    "combinationCount": 1023,
+    "failureCount": 0,
+    "failures": [],
+    "errors": []
+  },
+  "responsiveAudit": [
+    {
+      "viewport": "1920x1080",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 581,
+      "packagingClientHeight": 581,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1920x1080",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 123,
+      "packagingClientHeight": 123,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1920x1080",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 581,
+      "packagingClientHeight": 581,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 1080,
+      "viewportHeight": 1080,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 544,
+      "packagingClientHeight": 544,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 123,
+      "packagingClientHeight": 123,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 544,
+      "packagingClientHeight": 544,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 900,
+      "viewportHeight": 900,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 420,
+      "packagingClientHeight": 420,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 94,
+      "packagingClientHeight": 94,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "1366x768",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 420,
+      "packagingClientHeight": 420,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": true,
+      "scrollHeight": 768,
+      "viewportHeight": 768,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "sidebar-right",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 462,
+      "packagingClientHeight": 462,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1256,
+      "viewportHeight": 844,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "bottom-cards",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 511,
+      "packagingClientHeight": 511,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1305,
+      "viewportHeight": 844,
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "layout": "sidebar-left",
+      "pageHorizontalOverflow": false,
+      "packagingClipped": false,
+      "packagingScrollHeight": 494,
+      "packagingClientHeight": 494,
+      "boardInsideCore": true,
+      "modulesInsideFrame": true,
+      "frameFitsViewport": false,
+      "scrollHeight": 1288,
+      "viewportHeight": 844,
+      "errors": []
+    }
+  ]
+}

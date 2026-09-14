@@ -1,0 +1,688 @@
+[
+  {
+    "directory": "公共外壳",
+    "file": "公共外壳最终效果.png",
+    "width": 1672,
+    "height": 941,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1671,
+      940
+    ],
+    "sha256": "2A696C802D669AB88182B2D2B453C191696BBEC9C05E36A46E8D581F58B9021D"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "木质板.png",
+    "width": 1672,
+    "height": 636,
+    "transparentPixels": 123915,
+    "bounds": [
+      0,
+      0,
+      1671,
+      635
+    ],
+    "sha256": "4B37D580D9693FF77C45C2D0824E9E32B6DD1F396551E7D554D2A3E7E21466C2"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "图层 1.png",
+    "width": 867,
+    "height": 191,
+    "transparentPixels": 7904,
+    "bounds": [
+      0,
+      0,
+      866,
+      190
+    ],
+    "sha256": "7C70B675573C6730CA96A28A29D00C12E28678E8F73C9BEDDB4D062BAA9A69CB"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "图层 2.png",
+    "width": 95,
+    "height": 95,
+    "transparentPixels": 1918,
+    "bounds": [
+      0,
+      0,
+      94,
+      94
+    ],
+    "sha256": "43709A81DCA2F5279E6A4F3941EB2AB421D0C603FA5537E6116CC31B8B458C7A"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "图层 3.png",
+    "width": 307,
+    "height": 93,
+    "transparentPixels": 2307,
+    "bounds": [
+      0,
+      0,
+      305,
+      92
+    ],
+    "sha256": "230225F85721C8DDC1B183353EC3C4012DFB9B8EE8028527C2516706CEF07982"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "图层 5.png",
+    "width": 986,
+    "height": 484,
+    "transparentPixels": 5975,
+    "bounds": [
+      0,
+      0,
+      985,
+      482
+    ],
+    "sha256": "0FA76F3B99DDF362A463B66B8994A8CD2CDDEBDA4536AE9ACA4391611839EA34"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "character package.png",
+    "width": 282,
+    "height": 294,
+    "transparentPixels": 32001,
+    "bounds": [
+      0,
+      0,
+      281,
+      293
+    ],
+    "sha256": "B5BC8F1BC377AE810CEC8DBA0EBDE69C234FBBF16B8E3ADA94870E6C0CBF6D3B"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "new secen.png",
+    "width": 1672,
+    "height": 941,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1671,
+      940
+    ],
+    "sha256": "2B94637DCBCDFEA6F38D7E8E434BBB9FC2FDC6C941F44ECF83BB34D84E9FA681"
+  },
+  {
+    "directory": "公共外壳",
+    "file": "reward system.png",
+    "width": 224,
+    "height": 346,
+    "transparentPixels": 30294,
+    "bounds": [
+      0,
+      0,
+      223,
+      345
+    ],
+    "sha256": "0CAA144833FCEF0E8266B58F5C1220338330D4BF636711CD42EE6732919DDB7D"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 1.png",
+    "width": 887,
+    "height": 535,
+    "transparentPixels": 368255,
+    "bounds": [
+      3,
+      5,
+      883,
+      531
+    ],
+    "sha256": "075D96E1DA69E405266AE6CCAE8CA0268221EE3AF65128CED4D0EA4419F45614"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 10.png",
+    "width": 446,
+    "height": 29,
+    "transparentPixels": 3807,
+    "bounds": [
+      1,
+      3,
+      442,
+      23
+    ],
+    "sha256": "84C779B3E276F31F7ADC1541D3F765BB31B48EE6449C40386B46ACFA972A8DFE"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 2.png",
+    "width": 221,
+    "height": 537,
+    "transparentPixels": 72249,
+    "bounds": [
+      2,
+      3,
+      217,
+      535
+    ],
+    "sha256": "067D4BB792FA84E48D1B8F73DF86216110188D1DBDE350BBF01CAE03C8CE4DF7"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 3.png",
+    "width": 180,
+    "height": 167,
+    "transparentPixels": 2493,
+    "bounds": [
+      1,
+      2,
+      172,
+      163
+    ],
+    "sha256": "1A2E35D0F3958C811E6D14BA3429D3809D84A3514FEE59B5268AAE4F4DD4C002"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 4.png",
+    "width": 178,
+    "height": 170,
+    "transparentPixels": 2691,
+    "bounds": [
+      3,
+      4,
+      173,
+      165
+    ],
+    "sha256": "6DD9A8F2FA8D760F298C1006F97C085E1423EBD0C9C5AC99C56DCEBDFD03FBA2"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 5.png",
+    "width": 180,
+    "height": 170,
+    "transparentPixels": 3170,
+    "bounds": [
+      4,
+      5,
+      176,
+      166
+    ],
+    "sha256": "ED08787A1EB85D35CF2C1658E4E75F9569745A44FA17E58663EF500315018871"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 6.png",
+    "width": 116,
+    "height": 152,
+    "transparentPixels": 10244,
+    "bounds": [
+      2,
+      3,
+      114,
+      150
+    ],
+    "sha256": "A42226CAF5DC05190658740A9BC1923C891C2D8424E94A8987A6E4749098C283"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 7.png",
+    "width": 153,
+    "height": 151,
+    "transparentPixels": 8751,
+    "bounds": [
+      2,
+      0,
+      149,
+      149
+    ],
+    "sha256": "8A4674498062DDA55C518B5F6D92AD9F3CC51A2BB53AD017A76B44CFF7B032BB"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 8.png",
+    "width": 154,
+    "height": 151,
+    "transparentPixels": 6316,
+    "bounds": [
+      3,
+      4,
+      149,
+      150
+    ],
+    "sha256": "1DF7FC7B4BE80097C93E312E9A9E86D48CFF6C2B8CC438CAAF8A40F37DDB217F"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "图层 9.png",
+    "width": 152,
+    "height": 154,
+    "transparentPixels": 6323,
+    "bounds": [
+      2,
+      4,
+      148,
+      151
+    ],
+    "sha256": "9249E84EB51731CE5AA9768BECC787B764435D57657D9CF92FB030857CBE451E"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "最终效果.png",
+    "width": 1667,
+    "height": 944,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1666,
+      943
+    ],
+    "sha256": "99E54A3EB58BDA7C690DFFE3EE9A36C86C3F9693DA160BE6EDD6E434F92C112D"
+  },
+  {
+    "directory": "Minesweeper",
+    "file": "ChatGPT Image 2026年9月13日 下午07_30_57.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1253,
+      1253
+    ],
+    "sha256": "5C65B248C690A83E8BE9E6B5A8E989EA1730A88C558A2D4A1277AE301B5F889C"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "迷宫底座.png",
+    "width": 1001,
+    "height": 463,
+    "transparentPixels": 1224,
+    "bounds": [
+      0,
+      0,
+      1000,
+      462
+    ],
+    "sha256": "6307A18A8AD83B95C4CE3E236AA272B136EE2503A4CA5D91BCC25A29BBFF4795"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "色相_饱和度 1.png",
+    "width": 64,
+    "height": 84,
+    "transparentPixels": 2564,
+    "bounds": [
+      5,
+      0,
+      58,
+      79
+    ],
+    "sha256": "4CC786972DBA5830E8A200F456929B2812C6FF77C7A83587A1BBAB23D17E8DAC"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 1.png",
+    "width": 170,
+    "height": 455,
+    "transparentPixels": 1296,
+    "bounds": [
+      0,
+      0,
+      169,
+      454
+    ],
+    "sha256": "63968BA8F7B9B83F1A84BF378E98B3FEDC2977C74FAD1C4B5E13736D57F404F5"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 3 拷贝.png",
+    "width": 64,
+    "height": 84,
+    "transparentPixels": 2564,
+    "bounds": [
+      5,
+      0,
+      58,
+      79
+    ],
+    "sha256": "317BB66713A8AA17ED45B2A4BE0420427D1A5863A7A39D6748FBF8CF0A2DC06C"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 3.png",
+    "width": 64,
+    "height": 84,
+    "transparentPixels": 2564,
+    "bounds": [
+      5,
+      0,
+      58,
+      79
+    ],
+    "sha256": "64240CE92466ECFC14AEE472F06E48272455A241B46405A6D9A0EB0BBA3529F3"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 5.png",
+    "width": 22,
+    "height": 21,
+    "transparentPixels": 224,
+    "bounds": [
+      1,
+      0,
+      20,
+      19
+    ],
+    "sha256": "BCDAC97C1E999A8B7B22A7862ED9BE31825D1535D33B53B533240459A4B1AD59"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 6.png",
+    "width": 43,
+    "height": 46,
+    "transparentPixels": 1071,
+    "bounds": [
+      3,
+      6,
+      42,
+      44
+    ],
+    "sha256": "3C034F4802F07588ECEA75B76B8F55BCC6EDCFDA6B0B383519B578F1DAD484B2"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "图层 7.png",
+    "width": 80,
+    "height": 80,
+    "transparentPixels": 1236,
+    "bounds": [
+      0,
+      0,
+      79,
+      79
+    ],
+    "sha256": "75B8374E788414411B5ACB271A8434E4F3DA8C729A2B07F45173ACEA5616529D"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "椭圆 1 拷贝.png",
+    "width": 64,
+    "height": 78,
+    "transparentPixels": 2039,
+    "bounds": [
+      5,
+      0,
+      59,
+      73
+    ],
+    "sha256": "BE8638E1C2C75F97EE591658312647C662689C9F67670C5F8328CE8275D8EC67"
+  },
+  {
+    "directory": "MazeChase",
+    "file": "最终效果.png",
+    "width": 1666,
+    "height": 944,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1665,
+      943
+    ],
+    "sha256": "3840135A62B12AD2A0CFCB31927DB563F344C02E8836EFEF8426316A3C1DE8CB"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 1.png",
+    "width": 552,
+    "height": 963,
+    "transparentPixels": 416369,
+    "bounds": [
+      2,
+      1,
+      536,
+      959
+    ],
+    "sha256": "0AB987807235C343318BEBC4A68AD3DD24EB7B11C57DC5E9E24069078436E3D7"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 10.png",
+    "width": 177,
+    "height": 151,
+    "transparentPixels": 6384,
+    "bounds": [
+      21,
+      5,
+      163,
+      148
+    ],
+    "sha256": "2528592BFD3847FC3067E523A2B96977D703D43E12F1243498D01EF363D03C91"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 11.png",
+    "width": 157,
+    "height": 154,
+    "transparentPixels": 3864,
+    "bounds": [
+      2,
+      6,
+      144,
+      149
+    ],
+    "sha256": "76F4BBE3C1DFC696DDCE821DFB8689FAF6FB883EC8FEC089E4492CE0CA5219BA"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 12.png",
+    "width": 189,
+    "height": 202,
+    "transparentPixels": 17864,
+    "bounds": [
+      22,
+      6,
+      164,
+      149
+    ],
+    "sha256": "5C52301C581F1292F86E6C71FD519E670D7643C3A75A2449A801BD1BCB2D76F4"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 13.png",
+    "width": 164,
+    "height": 153,
+    "transparentPixels": 4756,
+    "bounds": [
+      6,
+      5,
+      148,
+      148
+    ],
+    "sha256": "655CCC2C55CA0BB2041D3F0E0A22B11DF12356699217A41685D3CAF5B80A0728"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 14.png",
+    "width": 156,
+    "height": 151,
+    "transparentPixels": 3315,
+    "bounds": [
+      9,
+      5,
+      153,
+      148
+    ],
+    "sha256": "5D1A8A2F74C0A44A345C48971311ABE3B59EFF5645FCEC7CC4AB75905D80BE41"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 15.png",
+    "width": 147,
+    "height": 144,
+    "transparentPixels": 2545,
+    "bounds": [
+      4,
+      5,
+      142,
+      142
+    ],
+    "sha256": "2A5DBECC5022D0437B981C01E8C091146A26BAA70430EB6AC991BA0082182C23"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 16.png",
+    "width": 201,
+    "height": 175,
+    "transparentPixels": 3703,
+    "bounds": [
+      4,
+      4,
+      195,
+      173
+    ],
+    "sha256": "4AC2E3F19A9A9ABCC7C8615A192034B0DCB1B708C52274CAA8AE83D3CE9743AA"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 17.png",
+    "width": 206,
+    "height": 202,
+    "transparentPixels": 11640,
+    "bounds": [
+      3,
+      4,
+      200,
+      198
+    ],
+    "sha256": "CC72FCEB57CC163554D2419E2B15B7E5BD9419B62EAEFC26C8AF5B553A78187D"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 2.png",
+    "width": 233,
+    "height": 278,
+    "transparentPixels": 35865,
+    "bounds": [
+      14,
+      2,
+      230,
+      274
+    ],
+    "sha256": "DDBD701FE88A2CAB4DAAC002D309C59AB385FBBAC2D93023725D65CC5ECC83DF"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 3.png",
+    "width": 206,
+    "height": 474,
+    "transparentPixels": 57311,
+    "bounds": [
+      3,
+      5,
+      198,
+      469
+    ],
+    "sha256": "AB4144ABD7CF90BF0640100510E16335328CBB2AC09CEDF5A1C23F573A59F029"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 4.png",
+    "width": 3,
+    "height": 407,
+    "transparentPixels": 1221,
+    "bounds": [
+      3,
+      407,
+      -1,
+      -1
+    ],
+    "sha256": "3F76B81DBCEAF8B5E9622E7444DBCD83F09FC0F140BAEC8783DC5F483F3A3324"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 5.png",
+    "width": 204,
+    "height": 177,
+    "transparentPixels": 4576,
+    "bounds": [
+      6,
+      4,
+      198,
+      173
+    ],
+    "sha256": "0570399528513FC77649406F09BDD042C128E3B35D8A4FCFFDC9B40A0B996EE1"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 6.png",
+    "width": 201,
+    "height": 175,
+    "transparentPixels": 3703,
+    "bounds": [
+      4,
+      4,
+      195,
+      173
+    ],
+    "sha256": "4AC2E3F19A9A9ABCC7C8615A192034B0DCB1B708C52274CAA8AE83D3CE9743AA"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 7.png",
+    "width": 154,
+    "height": 152,
+    "transparentPixels": 3211,
+    "bounds": [
+      4,
+      5,
+      146,
+      148
+    ],
+    "sha256": "70D8CFC98192C544B54ABC4BA3B0B920CC65368B18597C7216BD8B5F5FD5B177"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 8.png",
+    "width": 155,
+    "height": 154,
+    "transparentPixels": 3440,
+    "bounds": [
+      2,
+      6,
+      145,
+      149
+    ],
+    "sha256": "548D8C6D7ADF6F040FFA08CA392D37FF6EAD2B837A9DEC4D884667076A0ED4C6"
+  },
+  {
+    "directory": "Tetris",
+    "file": "图层 9.png",
+    "width": 165,
+    "height": 152,
+    "transparentPixels": 4737,
+    "bounds": [
+      8,
+      6,
+      152,
+      149
+    ],
+    "sha256": "60891E6905072C799B67B3D04F47C116F07A0FD29CCDCF65B48A387C128381CB"
+  },
+  {
+    "directory": "Tetris",
+    "file": "最终效果.png",
+    "width": 1666,
+    "height": 944,
+    "transparentPixels": 0,
+    "bounds": [
+      0,
+      0,
+      1665,
+      943
+    ],
+    "sha256": "32D1CF55A3997135DA665C903113473E63CBCF5AA41E0A444203EDC662F05091"
+  }
+]

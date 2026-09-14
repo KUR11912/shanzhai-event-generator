@@ -5,10 +5,11 @@ const playwrightRoot = "C:/Users/逸见艾丽卡/.cache/codex-runtimes/codex-pri
 const { chromium } = require(playwrightRoot);
 
 const projectRoot = path.resolve(__dirname, "..");
-const outputRoot = path.join(projectRoot, "exports", "minesweeper-event-ui-v3", "verification");
+const outputRoot = path.join(projectRoot, "exports", "minesweeper-event-ui-v4", "alignment", "after");
 const screenshotRoot = path.join(outputRoot, "screenshots");
 const url = process.argv.find((argument) => /^https?:\/\//.test(argument)) || "http://127.0.0.1:4173/";
 const responsiveOnly = process.argv.includes("--responsive-only");
+const representativesOnly = process.argv.includes("--representatives-only");
 const browserPath = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const storageKey = "shanzhai-event-generator:factory-state";
 
@@ -74,6 +75,61 @@ async function ready(page) {
   });
 }
 
+async function scanEventAssets(page) {
+  return page.evaluate(async () => {
+    const sources = {
+      commonBackground: window.EVENT_UI_ASSETS.common.background,
+      commonDialog: window.EVENT_UI_ASSETS.common.dialog,
+      commonCircle: window.EVENT_UI_ASSETS.common.circularButton,
+      commonHud: window.EVENT_UI_ASSETS.common.woodPanel,
+      commonPanel: window.EVENT_UI_ASSETS.common.panel,
+      gamePanel: window.EVENT_UI_ASSETS.minesweeper.sprites.gamePanel,
+      cellClosed: window.EVENT_UI_ASSETS.minesweeper.sprites.cellClosed,
+      cellOpen: window.EVENT_UI_ASSETS.minesweeper.sprites.cellOpen,
+      number1: window.EVENT_UI_ASSETS.minesweeper.sprites.number1,
+      number2: window.EVENT_UI_ASSETS.minesweeper.sprites.number2,
+      number3: window.EVENT_UI_ASSETS.minesweeper.sprites.number3,
+      number4: window.EVENT_UI_ASSETS.minesweeper.sprites.number4,
+      mine: window.EVENT_UI_ASSETS.minesweeper.sprites.mine,
+      flag: window.EVENT_UI_ASSETS.minesweeper.sprites.flag,
+    };
+    const scan = ([name, source]) => new Promise((resolve) => {
+      const image = new Image();
+      image.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        const context = canvas.getContext("2d", { willReadFrequently: true });
+        context.drawImage(image, 0, 0);
+        const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+        let minX = canvas.width;
+        let minY = canvas.height;
+        let maxX = -1;
+        let maxY = -1;
+        for (let y = 0; y < canvas.height; y += 1) {
+          for (let x = 0; x < canvas.width; x += 1) {
+            if (pixels[(y * canvas.width + x) * 4 + 3] <= 8) continue;
+            minX = Math.min(minX, x);
+            minY = Math.min(minY, y);
+            maxX = Math.max(maxX, x);
+            maxY = Math.max(maxY, y);
+          }
+        }
+        resolve([name, {
+          source,
+          width: canvas.width,
+          height: canvas.height,
+          alphaBounds: maxX < 0 ? null : { x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1 },
+          margins: maxX < 0 ? null : { left: minX, top: minY, right: canvas.width - 1 - maxX, bottom: canvas.height - 1 - maxY },
+        }]);
+      };
+      image.onerror = () => resolve([name, { source, error: "load failed" }]);
+      image.src = source;
+    });
+    return Object.fromEntries(await Promise.all(Object.entries(sources).map(scan)));
+  });
+}
+
 async function captureState(page, keepReferences = false) {
   return page.evaluate((storeReferences) => {
     const rect = (selector) => {
@@ -102,11 +158,14 @@ async function captureState(page, keepReferences = false) {
       rects: {
         frame: rect("#game-frame"),
         header: rect(".event-header"),
+        title: rect("#event-title"),
+        dialogue: rect("#event-dialogue"),
         body: rect(".game-body"),
         coreGame: rect(".core-game"),
         stage: rect("#game-stage"),
         game: rect(".minesweeper-game"),
         hud: rect(".game-hud"),
+        status: rect(".game-status"),
         boardShell: rect(".mine-board-shell"),
         board: rect(".mine-board"),
         packaging: rect("#packaging-panel"),
@@ -124,6 +183,41 @@ async function captureState(page, keepReferences = false) {
       pageHasHorizontalOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
       frameFitsViewport: document.querySelector("#game-frame").getBoundingClientRect().bottom <= innerHeight + 1,
       packagingClipped: document.querySelector("#packaging-panel").scrollHeight > document.querySelector("#packaging-panel").clientHeight + 1,
+      visualLayerChecks: {
+        backgroundSource: document.querySelector("#event-shell-background")?.getAttribute("src"),
+        backgroundObjectFit: getComputedStyle(document.querySelector("#event-shell-background")).objectFit,
+        headerArtInset: (() => {
+          const style = getComputedStyle(document.querySelector(".event-header"), "::before");
+          return { top: style.top, right: style.right, bottom: style.bottom, left: style.left, pointerEvents: style.pointerEvents };
+        })(),
+        panelArtPointerEvents: getComputedStyle(document.querySelector(".package-module"), "::before").pointerEvents,
+        mineCellBackgroundSizes: Array.from(new Set(cells.map((cell) => getComputedStyle(cell).backgroundSize))),
+        mineCellsSquare: cells.every((cell) => Math.abs(cell.getBoundingClientRect().width - cell.getBoundingClientRect().height) <= 1),
+        mineCellsSameSize: cells.every((cell) => {
+          const first = cells[0].getBoundingClientRect();
+          const current = cell.getBoundingClientRect();
+          return Math.abs(first.width - current.width) <= 1 && Math.abs(first.height - current.height) <= 1;
+        }),
+        textOverflow: ["#event-title", "#event-dialogue", ".game-status", ...modules.map((_, index) => `#packaging-panel > .package-module:nth-child(${index + 1})`)].map((selector) => {
+          const element = document.querySelector(selector);
+          return {
+            selector,
+            clientWidth: element.clientWidth,
+            clientHeight: element.clientHeight,
+            scrollWidth: element.scrollWidth,
+            scrollHeight: element.scrollHeight,
+            horizontal: element.scrollWidth > element.clientWidth + 1,
+            vertical: element.scrollHeight > element.clientHeight + 1,
+          };
+        }),
+        domCounts: {
+          frames: document.querySelectorAll("#game-frame").length,
+          gameStages: document.querySelectorAll("#game-stage").length,
+          boards: document.querySelectorAll(".mine-board").length,
+          huds: document.querySelectorAll(".game-hud").length,
+          packagingPanels: document.querySelectorAll("#packaging-panel").length,
+        },
+      },
     };
   }, keepReferences);
 }
@@ -154,11 +248,12 @@ async function runRepresentative(browser, representative) {
   await page.addInitScript(({ key, assets, layout }) => {
     localStorage.setItem(key, JSON.stringify({ mechanic: "minesweeper", assets, layout, step: 2 }));
     const layoutRandom = [0.1, 0.5, 0.9][layout];
-    const originalRandom = Math.random;
+    let seed = 0x5a17 + layout;
     let firstRandom = true;
     Math.random = () => {
       if (firstRandom) { firstRandom = false; return layoutRandom; }
-      return originalRandom();
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      return seed / 0x100000000;
     };
   }, { key: storageKey, assets: representative.assets, layout: representative.layout });
   await page.goto(url, { waitUntil: "networkidle" });
@@ -178,9 +273,25 @@ async function runRepresentative(browser, representative) {
   await page.waitForFunction(() => document.querySelector("#game-frame")?.dataset.mode === "event", null, { timeout: 4000 });
   await ready(page);
   const artState = await captureState(page);
+  const assetBounds = await scanEventAssets(page);
   const preservedReferences = await referencesPreserved(page);
-  const artPath = path.join(screenshotRoot, `${representative.name}-art.png`);
+  const artPath = path.join(screenshotRoot, `${representative.name}-event.png`);
   await page.locator("#game-frame").screenshot({ path: artPath });
+  const debugStyle = await page.addStyleTag({ content: `
+    #game-frame .event-header { outline: 2px solid #00ffff !important; outline-offset: -2px; }
+    #game-frame .game-body { outline: 2px solid #62dfa6 !important; outline-offset: -2px; }
+    #game-frame .core-game { outline: 2px solid #f3ca5b !important; outline-offset: -2px; }
+    #game-frame .game-hud { outline: 2px solid #b690ff !important; outline-offset: -2px; }
+    #game-frame .mine-board-shell { outline: 2px solid #ff718e !important; outline-offset: -2px; }
+    #game-frame #packaging-panel > .package-module { outline: 2px solid #3de5d4 !important; outline-offset: -2px; }
+    #game-frame.is-event-mode[data-mechanic="minesweeper"] .event-header::before,
+    #game-frame.is-event-mode[data-mechanic="minesweeper"] .minesweeper-game::before,
+    #game-frame.is-event-mode[data-mechanic="minesweeper"] .game-hud::before,
+    #game-frame.is-event-mode[data-mechanic="minesweeper"] .package-module::before { box-shadow: inset 0 0 0 2px #f052a7 !important; }
+  ` });
+  const debugPath = path.join(screenshotRoot, `${representative.name}-debug.png`);
+  await page.locator("#game-frame").screenshot({ path: debugPath });
+  await debugStyle.evaluate((style) => style.remove());
 
   const statePreservedDuringConversion = JSON.stringify(prototypeState.mineState) === JSON.stringify(artState.mineState) &&
     prototypeState.hudText === artState.hudText && prototypeState.statusText === artState.statusText;
@@ -208,7 +319,8 @@ async function runRepresentative(browser, representative) {
     layoutName: representative.name,
     assets: representative.assets,
     prototypeScreenshot: path.relative(outputRoot, prototypePath).replace(/\\/g, "/"),
-    artScreenshot: path.relative(outputRoot, artPath).replace(/\\/g, "/"),
+    eventScreenshot: path.relative(outputRoot, artPath).replace(/\\/g, "/"),
+    debugScreenshot: path.relative(outputRoot, debugPath).replace(/\\/g, "/"),
     rectDelta,
     statePreservedDuringConversion,
     preservedReferences,
@@ -219,6 +331,8 @@ async function runRepresentative(browser, representative) {
     noHorizontalOverflow: !artState.pageHasHorizontalOverflow,
     frameFitsViewport: artState.frameFitsViewport,
     packagingClipped: artState.packagingClipped,
+    visualLayerChecks: artState.visualLayerChecks,
+    assetBounds,
     errors,
     prototypeRects: prototypeState.rects,
     artRects: artState.rects,
@@ -338,15 +452,15 @@ async function auditResponsiveViewports(browser) {
   const browser = await chromium.launch({ headless: true, executablePath: browserPath });
   try {
     const existingReportPath = path.join(outputRoot, "verification-report.json");
-    const existingReport = responsiveOnly && fs.existsSync(existingReportPath) ? JSON.parse(fs.readFileSync(existingReportPath, "utf8")) : null;
-    const representativeResults = existingReport?.representatives || [];
+    const existingReport = (responsiveOnly || representativesOnly) && fs.existsSync(existingReportPath) ? JSON.parse(fs.readFileSync(existingReportPath, "utf8")) : null;
+    const representativeResults = responsiveOnly ? (existingReport?.representatives || []) : [];
     if (!responsiveOnly) {
       for (const representative of representatives) representativeResults.push(await runRepresentative(browser, representative));
     }
     const combinationAudit = existingReport?.combinationAudit || await auditAllCombinations(browser);
     const responsiveAudit = await auditResponsiveViewports(browser);
     const report = {
-      version: "packaging-factory-v3",
+      version: "minesweeper-event-ui-v4 (based on packaging-factory-v3)",
       url,
       viewport: { width: 1920, height: 1080, deviceScaleFactor: 1 },
       representatives: representativeResults,

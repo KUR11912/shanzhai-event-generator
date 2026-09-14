@@ -47,23 +47,65 @@ function Assert-SourceFiles([string]$BasePath, [System.Collections.IDictionary]$
   }
 }
 
+function Test-MagentaBackground([System.Drawing.Color]$Pixel) {
+  return $Pixel.A -gt 0 -and
+    $Pixel.R -gt 120 -and $Pixel.B -gt 80 -and $Pixel.G -lt 120 -and
+    ($Pixel.R - $Pixel.G) -gt 40 -and ($Pixel.B - $Pixel.G) -gt 20
+}
+
 function Export-MagentaCleanPng([string]$SourcePath, [string]$DestinationPath) {
   $source = [System.Drawing.Bitmap]::FromFile($SourcePath)
   $output = New-Object System.Drawing.Bitmap($source.Width, $source.Height, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
   try {
+    $candidates = [bool[,]]::new($source.Width, $source.Height)
+    $queued = [bool[,]]::new($source.Width, $source.Height)
+    $queue = [System.Collections.Generic.Queue[int]]::new()
+
     for ($y = 0; $y -lt $source.Height; $y++) {
       for ($x = 0; $x -lt $source.Width; $x++) {
         $pixel = $source.GetPixel($x, $y)
-        $isMagentaFringe = $pixel.A -gt 0 -and
-          $pixel.R -gt 180 -and $pixel.B -gt 120 -and $pixel.G -lt 105 -and
-          ($pixel.R - $pixel.G) -gt 100 -and ($pixel.B - $pixel.G) -gt 45
-        if ($isMagentaFringe) {
-          $output.SetPixel($x, $y, [System.Drawing.Color]::Transparent)
-        } else {
-          $output.SetPixel($x, $y, $pixel)
+        $output.SetPixel($x, $y, $pixel)
+        $candidates[$x, $y] = Test-MagentaBackground $pixel
+      }
+    }
+
+    # Seed only magenta pixels that touch the canvas edge or existing transparency.
+    # This keeps isolated pink, red and purple details inside the artwork intact.
+    for ($y = 0; $y -lt $source.Height; $y++) {
+      for ($x = 0; $x -lt $source.Width; $x++) {
+        if (-not $candidates[$x, $y]) { continue }
+        $isBoundary = $x -eq 0 -or $y -eq 0 -or $x -eq ($source.Width - 1) -or $y -eq ($source.Height - 1)
+        if (-not $isBoundary) {
+          $isBoundary = $source.GetPixel($x - 1, $y).A -le 8 -or
+            $source.GetPixel($x + 1, $y).A -le 8 -or
+            $source.GetPixel($x, $y - 1).A -le 8 -or
+            $source.GetPixel($x, $y + 1).A -le 8
+        }
+        if ($isBoundary) {
+          $index = $y * $source.Width + $x
+          $queue.Enqueue($index)
+          $queued[$x, $y] = $true
         }
       }
     }
+
+    while ($queue.Count -gt 0) {
+      $index = $queue.Dequeue()
+      $x = $index % $source.Width
+      $y = [math]::Floor($index / $source.Width)
+      $pixel = $output.GetPixel($x, $y)
+      $output.SetPixel($x, $y, [System.Drawing.Color]::FromArgb(0, $pixel.R, $pixel.G, $pixel.B))
+      foreach ($offset in @(@(-1, 0), @(1, 0), @(0, -1), @(0, 1))) {
+        $nextX = $x + $offset[0]
+        $nextY = $y + $offset[1]
+        if ($nextX -lt 0 -or $nextY -lt 0 -or $nextX -ge $source.Width -or $nextY -ge $source.Height) { continue }
+        if ($candidates[$nextX, $nextY] -and -not $queued[$nextX, $nextY]) {
+          $queue.Enqueue($nextY * $source.Width + $nextX)
+          $queued[$nextX, $nextY] = $true
+        }
+      }
+    }
+
     $output.Save($DestinationPath, [System.Drawing.Imaging.ImageFormat]::Png)
   } finally {
     $output.Dispose()

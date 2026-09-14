@@ -1,0 +1,187 @@
+/* Four boolean choices. The generator keeps the existing typography and palette. */
+.asset-grid { width: min(900px, 100%); grid-template-columns: repeat(2,minmax(0,1fr)); }
+.asset-card { min-height: 160px; padding: 24px; }
+.asset-card .toggle-label { grid-column: 2; font-size: .75rem; color: var(--muted); }
+.asset-card[aria-pressed="true"] .toggle-label { color: var(--cyan); }
+.asset-card:nth-child(even)[aria-pressed="true"] { border-color: var(--pink); background: #291d35; }
+.asset-card:nth-child(even)[aria-pressed="true"] > i { background: var(--pink); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.scene-viewport { display: contents; }
+.scene-scroll-hint { display: none; }
+
+/* Shared, live game components. Switching skins does not replace these nodes. */
+.game-frame[data-layout="fixed"] .game-body { grid-template-columns: minmax(0,1fr); }
+.game-board-shell { min-width: 0; min-height: 0; position: relative; place-self: center; isolation: isolate; }
+.mine-board-shell { height: 100%; max-height: 100%; aspect-ratio: 1; max-width: 100%; }
+.mine-board-shell .mine-board { width: 100%; height: 100%; }
+.maze-board-shell { height: 100%; max-height: 100%; aspect-ratio: 17 / 13; max-width: 100%; }
+.maze-board-shell .maze-board { width: 100%; height: 100%; }
+.tetris-board-shell { height: 100%; max-height: 100%; aspect-ratio: 1 / 2; max-width: 100%; }
+.tetris-board-shell .tetris-board { width: 100%; height: 100%; }
+.minesweeper-game, .pacman-game, .tetris-game { min-height: 0; height: 100%; }
+.tetris-game { grid-template-rows: auto minmax(0,1fr) auto auto; gap: 8px; }
+.tetris-playfield { min-height: 0; grid-template-columns: minmax(90px,140px) minmax(0,310px) minmax(90px,140px); }
+.hud-stat { display: flex; align-items: center; gap: .4em; }
+.hud-stat small { font: inherit; text-transform: uppercase; }
+.hud-stat b { white-space: nowrap; }
+.scene-restart { display: none; }
+.piece-preview { align-self: start; min-width: 0; padding: 10px; display: grid; gap: 8px; background: #182238; border-radius: 10px; }
+.piece-preview > strong { text-align: center; }
+.preview-grid { width: 100%; aspect-ratio: 1; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); grid-template-rows: repeat(4,minmax(0,1fr)); gap: 1px; }
+.preview-cell { min-width: 0; min-height: 0; }
+.hold-action { padding: 4px; min-height: 30px; font-size: .7rem; }
+.tetris-cell.is-ghost { outline: 1px solid #9faabe; outline-offset: -2px; background: #333f53; }
+.game-status { text-align: center; }
+.maze-cell > i { position: absolute; left: 50%; top: 50%; translate: -50% -50%; }
+.maze-player { transform: rotate(45deg); }
+
+/* Reference canvas: 1672 x 941. Only this outer box follows the viewport.
+   Slots stay fixed when Character / Story / Reward switches change. */
+.game-frame.is-scene-mode {
+  width: min(100%, calc((100dvh - 228px) * 1672 / 941));
+  max-height: none; aspect-ratio: 1672 / 941; display: block;
+  container-type: size; background: #bbe4e0; overflow: hidden;
+  --ink: #59412b; --paper: #fff3d3;
+  font-size: 1.28cqw; color: var(--ink);
+}
+.is-scene-mode .event-header { display: none; }
+.is-scene-mode .event-shell-background { opacity: 1; object-fit: cover; }
+.scene-layer { position: absolute; display: block; pointer-events: none; user-select: none; }
+.scene-wood { inset: 22% 0 0; width: 100%; height: 78%; object-fit: fill; z-index: 1; }
+.scene-character { left: 16.4%; top: 1.5%; width: 17%; height: 29.5%; object-fit: contain; z-index: 2; }
+.scene-rewards { left: 5.2%; top: 39%; width: 13.4%; height: 36.8%; object-fit: contain; z-index: 2; }
+.scene-story { position: absolute; left: 34.4%; top: 7.9%; width: 51.7%; height: 20.2%; z-index: 3; padding: 1.25% 2.1% 1.1% 4.2%; color: #322516; }
+.scene-story::before { content: ""; position: absolute; inset: 0; border: 1.9cqw solid transparent; border-left-width: 3.8cqw; border-image: var(--common-dialog) 32 45 32 85 fill stretch; z-index: -1; pointer-events: none; }
+.scene-story p { height: 100%; overflow: auto; scrollbar-width: thin; font-family: Georgia, 'Times New Roman', serif; font-size: max(12px,1.45cqw); font-weight: 600; line-height: 1.5; overflow-wrap: break-word; }
+.is-scene-mode .game-body { display: contents; }
+.is-scene-mode .core-game { position: absolute; left: 22%; top: 33%; width: 67%; height: 56%; z-index: 2; background: none; border-radius: 0; overflow: visible; }
+.is-scene-mode .core-stage { height: 100%; min-height: 0; overflow: visible; }
+.is-scene-mode .minesweeper-game, .is-scene-mode .pacman-game {
+  position: relative; min-height: 0; height: 100%; display: grid;
+  grid-template-columns: minmax(0,1fr) 14%; grid-template-rows: minmax(0,1fr) 7%;
+  gap: 2%; padding: 1.7%; background: var(--paper); border-radius: 0;
+}
+.is-scene-mode .minesweeper-game::before, .is-scene-mode .maze-board-shell::before,
+.is-scene-mode .game-hud::before, .is-scene-mode .tetris-board-shell::before,
+.is-scene-mode .piece-preview::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  border: .9cqw solid transparent; border-image: var(--art-frame) 40 fill stretch;
+}
+.is-scene-mode .minesweeper-game::before { z-index: 0; border-image-slice: 45; }
+.is-scene-mode .minesweeper-game > * { z-index: 1; }
+.is-scene-mode .mine-board-shell { grid-column: 1; grid-row: 1; height: 100%; aspect-ratio: 1; }
+.is-scene-mode .mine-board { border-radius: 0; background: #d5b589; padding: 0; gap: 1px; }
+.is-scene-mode .mine-cell { position: relative; border: 0; border-radius: 0; background: var(--art-closed) center / 100% 100% no-repeat; font: 800 2cqw/1 Arial,sans-serif; color: #4777a9; transform: none; transition: none; }
+.is-scene-mode .mine-cell:hover:not(:disabled):not(.is-flagged) { background-image: var(--art-pressed); transform: none; filter: brightness(1.07); }
+.is-scene-mode .mine-cell.is-revealed { background-image: var(--art-open); }
+.is-scene-mode .mine-cell.is-flagged { background-image: var(--art-flag),var(--art-closed); background-size: auto 76%,100% 100%; }
+.is-scene-mode .mine-cell.is-mine { background-image: var(--art-mine),var(--art-open); background-size: 86% auto,100% 100%; }
+.is-scene-mode .mine-cell.is-flagged .cell-symbol, .is-scene-mode .mine-cell.is-mine .cell-symbol { visibility: hidden; }
+.is-scene-mode .mine-count-2 { color: #4b8d3b; }.is-scene-mode .mine-count-3 { color: #d56438; }
+.is-scene-mode .mine-count-4 { color: #8351ab; }.is-scene-mode .mine-count-5 { color: #b14648; }
+.is-scene-mode .mine-count-6 { color: #22888e; }.is-scene-mode .mine-count-7 { color: #5c4231; }.is-scene-mode .mine-count-8 { color: #72717a; }
+.is-scene-mode .game-hud {
+  position: relative; isolation: isolate; grid-column: 2; grid-row: 1 / 3;
+  min-width: 0; min-height: 0; padding: 9% 8%; display: flex; flex-direction: column;
+  justify-content: space-evenly; gap: .2cqw; color: var(--ink); background: var(--paper); font-size: 1.15cqw;
+}
+.is-scene-mode .game-hud::before { border-image-source: var(--art-hud); border-image-slice: 40; border-width: .65cqw; }
+.is-scene-mode .hud-stat { display: flex; flex-direction: column; gap: .1em; text-align: center; line-height: 1.35; }
+.is-scene-mode .hud-stat small { font-size: 1cqw; text-transform: none; font-weight: 500; }
+.is-scene-mode .hud-stat b { font-size: 1.45cqw; }
+.is-scene-mode .hud-stat.stat-phase b { font-size: .8cqw; }
+.is-scene-mode .stat-mines::before, .is-scene-mode .stat-time::before { content: ""; width: 2.4cqw; height: 2.4cqw; background: var(--art-flag) center / contain no-repeat; }
+.is-scene-mode .stat-time::before { background-image: var(--art-clock); }
+.is-scene-mode .scene-restart { display: block; width: 3.7cqw; height: 3.7cqw; flex: 0 0 auto; padding: 0; border: 0; border-radius: 50%; background: var(--art-restart) center / contain no-repeat; }
+.is-scene-mode .scene-restart:hover { filter: brightness(1.1); }
+.is-scene-mode .game-status { color: #503c29; min-width: 0; min-height: 0; margin: 0; align-self: center; font-size: max(9px,.95cqw); font-weight: 600; line-height: 1.3; }
+.is-scene-mode .minesweeper-game > .game-status { grid-column: 1; grid-row: 2; }
+.is-scene-mode[data-phase="lost"] .stat-phase b { color: #b73442; }
+.is-scene-mode[data-phase="won"] .stat-phase b { color: #277a3d; }
+
+/* Maze: draw every wall from the collision Set, never the baked illustration. */
+.is-scene-mode[data-mechanic="pacman"] .core-game { left: 20%; top: 33.5%; width: 70.5%; height: 53.5%; }
+.is-scene-mode .pacman-game { background: transparent; padding: 0; grid-template-columns: minmax(0,1fr) 14%; grid-template-rows: minmax(0,1fr) 10%; gap: 3%; }
+.is-scene-mode .maze-board-shell { grid-column: 1; grid-row: 1; box-sizing: content-box; height: calc(100% - 1.3cqw); aspect-ratio: 17 / 13; background: #c0d2c0; padding: .65cqw; isolation: isolate; }
+.is-scene-mode .maze-board-shell::before { border-image-slice: 32; }
+.is-scene-mode .maze-board { background: #c0d2c0; padding: 0; gap: 0; border-radius: 0; }
+.is-scene-mode .maze-cell { background: #c0d2c0 var(--art-floor) center / cover; }
+.is-scene-mode .maze-cell.is-wall { background: #ecd29c var(--art-wall) center / 100% 100%; border-radius: 0; border-style: solid; border-width: .22cqw; border-color: #fff1c9 #bb925d #b68c5c #efcf96; }
+.is-scene-mode .maze-cell.wall-join-up { border-top-width: 0; }
+.is-scene-mode .maze-cell.wall-join-right { border-right-width: 0; }
+.is-scene-mode .maze-cell.wall-join-down { border-bottom-width: 0; }
+.is-scene-mode .maze-cell.wall-join-left { border-left-width: 0; }
+.is-scene-mode .maze-dot, .is-scene-mode .maze-player, .is-scene-mode .maze-enemy, .is-scene-mode .maze-special { background-color: transparent; background-repeat: no-repeat; background-size: contain; background-position: center; border: 0; border-radius: 0; transform: none; }
+.is-scene-mode .maze-dot { width: 34%; height: 34%; background-image: var(--art-collectible); }
+.is-scene-mode .maze-player { width: 91%; height: 91%; background-image: var(--art-player); }
+.is-scene-mode .maze-enemy { width: 93%; height: 93%; background-image: var(--art-enemy); }
+.is-scene-mode .maze-enemy::after { display: none; }
+.is-scene-mode .maze-special { width: 76%; height: 86%; background-image: var(--art-power); }
+.is-scene-mode .maze-controls { grid-column: 1; grid-row: 2; display: flex; justify-content: center; gap: 1cqw; }
+.is-scene-mode .move-pad { display: flex; gap: .3cqw; }
+.is-scene-mode .core-button { padding: 0 .6cqw; min-height: 2.2cqw; font-size: 1cqw; border-color: #b68c5c; background: #fff3d3; color: var(--ink); }
+.is-scene-mode .move-pad .core-button { min-height: 2.1cqw; width: 2.1cqw; padding: 0; }
+.is-scene-mode .stat-lives::after { content: ""; width: 2.7cqw; height: 2.7cqw; background: var(--art-player) center / contain no-repeat; }
+
+/* Tetris has its own internal slots: Hold left, board center, Next/stats right. */
+.is-scene-mode[data-mechanic="tetris"] .core-game { left: 27.6%; top: 31%; width: 46%; height: 65%; }
+.is-scene-mode .tetris-game { position: relative; padding: 0; display: grid; grid-template-columns: 22% minmax(0,1fr) 24%; grid-template-rows: 41% minmax(0,1fr) 5% 5%; gap: 2%; background: transparent; }
+.is-scene-mode .tetris-playfield { display: contents; }
+.is-scene-mode .tetris-board-shell { grid-column: 2; grid-row: 1 / 3; box-sizing: content-box; height: calc(100% - 1.2cqw); aspect-ratio: 1 / 2; padding: .6cqw; background: var(--paper); isolation: isolate; }
+.is-scene-mode .tetris-board-shell::before { border-image-slice: 40; border-width: .8cqw; }
+.is-scene-mode .tetris-board { padding: 0; gap: 0; border-radius: 0; background: #fff4d8; }
+.is-scene-mode .tetris-cell { border-radius: 0; background: transparent; box-shadow: inset 0 0 0 .5px #d8caa7; }
+.is-scene-mode .tetris-cell[class*="block-"], .is-scene-mode .preview-cell[class*="block-"] { background-size: 100% 100%; background-repeat: no-repeat; background-position: center; border: 0; box-shadow: none; }
+.is-scene-mode .block-1 { background-image: var(--art-block-1); }.is-scene-mode .block-2 { background-image: var(--art-block-2); }
+.is-scene-mode .block-3 { background-image: var(--art-block-3); }.is-scene-mode .block-4 { background-image: var(--art-block-4); }
+.is-scene-mode .block-5 { background-image: var(--art-block-5); }.is-scene-mode .block-6 { background-image: var(--art-block-6); }
+.is-scene-mode .block-7 { background-image: var(--art-block-7); }
+.is-scene-mode .tetris-cell.is-ghost { background: var(--art-ghost) center / 100% 100%; opacity: .4; outline: 0; }
+.is-scene-mode .piece-preview { position: relative; isolation: isolate; min-height: 0; padding: 1cqw; gap: .3cqw; background: var(--paper); color: var(--ink); border-radius: 0; font-size: 1.5cqw; }
+.is-scene-mode .hold-panel { grid-column: 1; grid-row: 1; margin-top: 10%; grid-template-rows: auto 1fr auto; }
+.is-scene-mode .hold-panel::before { border-image-source: var(--art-hold); border-image-slice: 45; border-width: .75cqw; }
+.is-scene-mode .next-panel { grid-column: 3; grid-row: 1; align-self: stretch; grid-template-rows: auto 1fr; }
+.is-scene-mode .next-panel::before { border-image-source: var(--art-next); border-image-slice: 40; border-width: .8cqw; }
+.is-scene-mode .preview-grid { place-self: center; width: 6cqw; max-width: 100%; gap: 0; }
+.is-scene-mode .hold-action { font-size: .9cqw; min-height: 1.8cqw; }
+.is-scene-mode .tetris-game > .game-hud { grid-column: 3; grid-row: 2; padding: .6cqw; }
+.is-scene-mode .tetris-game > .game-hud::before { border-image-source: var(--art-panel); border-image-slice: 28; }
+.is-scene-mode .tetris-game .hud-stat small { font-size: .85cqw; }
+.is-scene-mode .tetris-game .hud-stat b { font-size: 1.2cqw; }
+.is-scene-mode .tetris-game .stat-phase small { display: none; }
+.is-scene-mode .tetris-game .stat-phase b { font-size: .75cqw; }
+.is-scene-mode .tetris-game .scene-restart { width: 2.7cqw; height: 2.7cqw; }
+.is-scene-mode .tetris-controls { grid-column: 1 / 4; grid-row: 3; gap: .5cqw; }
+.is-scene-mode .tetris-controls .core-button { min-height: 1.8cqw; border-radius: .4cqw; }
+.is-scene-mode .tetris-game > .game-status { grid-column: 1 / 4; grid-row: 4; }
+.has-line-clear::after { content: ""; position: absolute; inset: 0; border: 2px solid #fffbd1; pointer-events: none; animation: scene-flash 500ms both; }
+@keyframes scene-flash { 0%,100% { opacity: 0; } 40% { opacity: 1; box-shadow: 0 0 22px #ffe789; } }
+body:has(.is-scene-mode) #restart-game { display: none; }
+
+@media (max-width: 1000px) {
+  .run-toolbar { height: auto; min-height: 90px; gap: 6px; flex-wrap: wrap; }
+  .run-actions { gap: 6px; }
+  .run-actions .button { min-height: 36px; padding-inline: 9px; font-size: .72rem; }
+  #reveal-mechanic { width: 178px; }
+}
+@media (max-width: 720px) {
+  .run-toolbar { overflow: visible; }
+  .run-actions { display: flex; flex-wrap: wrap; }
+  .skin-action { width: auto; }
+  /* Keep small text and controls usable; pan the entire coordinate space,
+     never scale or scroll the background and game independently. */
+  .scene-viewport:has(.is-scene-mode) { display: block; width: 100%; overflow-x: auto; border-radius: 16px; }
+  .game-frame.is-scene-mode { width: 1000px; min-width: 1000px; margin: 0; aspect-ratio: 1672 / 941; }
+  .scene-viewport:has(.is-scene-mode) + .scene-scroll-hint { display: block; margin: 8px 0; color: var(--muted); font-size: .75rem; }
+  .scene-story p { font-size: 12px; line-height: 1.4; }
+  .game-frame:not(.is-scene-mode) .core-stage { min-height: 480px; }
+  .game-frame:not(.is-scene-mode) .minesweeper-game, .game-frame:not(.is-scene-mode) .pacman-game { height: 480px; }
+  .game-frame:not(.is-scene-mode) .tetris-game { height: 540px; }
+  .game-frame:not(.is-scene-mode) .tetris-playfield { grid-template-columns: 18% minmax(0,1fr) 18%; gap: 6px; }
+  .piece-preview { padding: 5px; font-size: .65rem; }
+  .hold-action { font-size: .55rem; }
+  .is-scene-mode .maze-controls { gap: .5cqw; }
+  .is-scene-mode .game-status { font-size: 1.25cqw; }
+  .production-data { margin-top: 10px; height: auto; }
+}
+@media (max-width: 520px) { .asset-grid { grid-template-columns: 1fr; } }

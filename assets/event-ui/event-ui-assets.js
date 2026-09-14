@@ -1,69 +1,14 @@
-window.EVENT_UI_ASSETS = Object.freeze({
-  shell: {
-    path: "assets/event-ui/processed/event-shell.png",
-    width: 1672,
-    height: 941,
-  },
-  common: {
-    background: "assets/event-ui/processed/common/background.png",
-    dialog: "assets/event-ui/processed/common/dialog-panel.png",
-    circularButton: "assets/event-ui/processed/common/circular-button.png",
-    woodPanel: "assets/event-ui/processed/common/wood-panel.png",
-    panel: "assets/event-ui/processed/common/panel.png",
-  },
-  minesweeper: {
-    sprites: {
-      gamePanel: "assets/event-ui/processed/minesweeper/game-panel.png",
-      cellClosed: "assets/event-ui/processed/minesweeper/cell-closed.png",
-      cellOpen: "assets/event-ui/processed/minesweeper/cell-open.png",
-      number1: "assets/event-ui/processed/minesweeper/number-1.png",
-      number2: "assets/event-ui/processed/minesweeper/number-2.png",
-      number3: "assets/event-ui/processed/minesweeper/number-3.png",
-      number4: "assets/event-ui/processed/minesweeper/number-4.png",
-      mine: "assets/event-ui/processed/minesweeper/mine.png",
-      flag: "assets/event-ui/processed/minesweeper/flag.png",
-      safety: "assets/event-ui/processed/minesweeper/safety.png",
-      explosion: "assets/event-ui/processed/minesweeper/explosion.png",
-      victory: "assets/event-ui/processed/minesweeper/victory.png",
-      failure: "assets/event-ui/processed/minesweeper/failure.png",
-    },
-  },
-  tetris: {
-    sprites: {
-      boardFrame: "assets/event-ui/processed/tetris/board-frame.png",
-      grid: "assets/event-ui/processed/tetris/grid.png",
-      block1: "assets/event-ui/processed/tetris/block-1.png",
-      block2: "assets/event-ui/processed/tetris/block-2.png",
-      block3: "assets/event-ui/processed/tetris/block-3.png",
-      block4: "assets/event-ui/processed/tetris/block-4.png",
-      block5: "assets/event-ui/processed/tetris/block-5.png",
-      block6: "assets/event-ui/processed/tetris/block-6.png",
-      block7: "assets/event-ui/processed/tetris/block-7.png",
-      block8: "assets/event-ui/processed/tetris/block-8.png",
-      lineClear: "assets/event-ui/processed/tetris/line-clear.png",
-      nextPanel: "assets/event-ui/processed/tetris/next-panel.png",
-      holdPanel: "assets/event-ui/processed/tetris/hold-panel.png",
-      valuePanel: "assets/event-ui/processed/tetris/value-panel.png",
-      gameOver: "assets/event-ui/processed/tetris/game-over.png",
-    },
-  },
-  pacman: {
-    sprites: {
-      boardFrame: "assets/event-ui/processed/maze/board-frame.png",
-      floor: "assets/event-ui/processed/maze/floor.png",
-      wallHorizontal: "assets/event-ui/processed/maze/wall-horizontal.png",
-      wallVertical: "assets/event-ui/processed/maze/wall-vertical.png",
-      wallCorner: "assets/event-ui/processed/maze/wall-corner.png",
-      wallT: "assets/event-ui/processed/maze/wall-t.png",
-      wallCross: "assets/event-ui/processed/maze/wall-cross.png",
-      collectible: "assets/event-ui/processed/maze/collectible.png",
-      powerItem: "assets/event-ui/processed/maze/power-item.png",
-      player: "assets/event-ui/processed/maze/player.png",
-      enemy: "assets/event-ui/processed/maze/enemy.png",
-      shield: "assets/event-ui/processed/maze/shield.png",
-      powerEffect: "assets/event-ui/processed/maze/power-effect.png",
-      victory: "assets/event-ui/processed/maze/victory.png",
-      failure: "assets/event-ui/processed/maze/failure.png",
-    },
-  },
-});
+// Runtime resources are namespaced; reference composites are intentionally excluded.
+// Source-to-output details and measured dimensions: processed/scene/manifest.json.
+window.EVENT_UI_ASSETS = (() => {
+  const root = "assets/event-ui/processed/scene/";
+  const group = (folder, names) => Object.freeze(Object.fromEntries(
+    names.map(name => [name.replace(/-([a-z])/g, (_,c) => c.toUpperCase()), root + folder + "/" + name + ".png"])
+  ));
+  return Object.freeze({
+    common: group("common", ["background","stage","character","rewards","dialog","panel","button"]),
+    minesweeper: group("minesweeper", ["frame","hud","closed","pressed","open","flag","mine","clock","restart","divider"]),
+    pacman: group("maze", ["frame","wall","floor","hud","player","enemy","collectible","power","restart"]),
+    tetris: group("tetris", ["frame","hold","next","panel","block-1","block-2","block-3","block-4","block-5","block-6","block-7","ghost","restart"]),
+  });
+})();
